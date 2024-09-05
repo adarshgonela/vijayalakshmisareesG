@@ -11,3 +11,1044 @@
   <app-root></app-root>
 </body>
 </html> -->
+<!DOCTYPE html><html class="js" lang="en"><head>
+     
+
+  <script type="text/javascript" async="" src="./app/assets/js/production.pc.min.js"></script><script type="text/javascript" async="" src="./app/assets/js/pcjs.production.min.js"></script><script type="text/javascript" async="" src="./app/assets/js/free-gift-cart-upsell-pro.min.js"></script><script type="text/javascript" async="" src="./app/assets/js/logisy-theme.js"></script><script type="text/javascript" async="" src="./app/assets/js/installed.js"></script><script type="text/javascript" async="" src="./app/assets/js/production.pc.min.js"></script><script type="text/javascript" async="" src="./app/assets/js/pcjs.production.min.js"></script><script type="text/javascript" async="" src="./app/assets/js/free-gift-cart-upsell-pro.min.js"></script><script type="javascript/blocked" async="" src="./app/assets/js/logisy-theme.js"></script><script type="text/javascript" async="" src="./app/assets/js/installed.js"></script><script type="text/javascript" async="" src="./app/assets/js/iwishlist-2.0.js"></script><script type="text/javascript" async="" src="./app/assets/js/runtime-main.js"></script><script type="text/javascript" async="" src="./app/assets/js/main.chunk.js"></script><script type="text/javascript" async="" src="./app/assets/js/3.chunk.js"></script><script type="text/javascript" async="" src="./app/assets/js/7.chunk.js"></script><script type="text/javascript" async="" src="./app/assets/js/6.chunk.js"></script><script type="text/javascript" async="" src="./app/assets/js/5.chunk.js"></script><script type="text/javascript" async="" src="./app/assets/js/4.chunk.js"></script><script type="text/javascript" async="" src="./app/assets/js/2.chunk.js"></script><script type="text/javascript" async="" src="./app/assets/js/trekkie.storefront.191ee957437379e11b4b5a983ae36024546a469d.min.js"></script><script type="text/javascript" async="" src="js/trekkie.storefront.191ee957437379e11b4b5a983ae36024546a469d.min.js"></script><script>
+  
+  window.merchantInfo  = {
+          mid: "19g6ilmrm0yi8",
+          environment: "production",
+          type: "merchantInfo",
+        storeId: "81871077663",
+        fbpixel: "995562551658527",
+        }
+  var productFormSelector = '.shopify-product-form';
+  var cart = {"note":null,"attributes":{},"original_total_price":0,"total_price":0,"total_discount":0,"total_weight":0.0,"item_count":0,"items":[],"requires_shipping":false,"currency":"INR","items_subtotal_price":0,"cart_level_discount_applications":[],"checkout_charge_amount":0}
+  var templateName = 'collection'
+  </script>
+  <script defer="" src="./app/assets/js/analytics.js" id="gokwikHeaderAnalytics"></script>
+  <script src="./app/assets/js/merchant.integration.js"></script>
+  <script src="./app/assets/js/jquery.min.js"></script>
+  <script>
+    window.addEventListener('gokwikLoaded', e => {
+  
+     $('.gokwik-checkout button').prop('disabled', false);
+                $('.gokwik-checkout button').removeClass('disabled');
+           $('#gokwik-buy-now').prop('disabled', false);
+                $('#gokwik-buy-now').removeClass('disabled');
+  
+    const targetElement = document.querySelector("body");
+    function debounce(func, delay) {
+      let timeoutId;
+      return function () {
+        const context = this;
+        const args = arguments;
+        clearTimeout(timeoutId);
+        timeoutId = setTimeout(function () {
+          func.apply(context, args);
+        }, delay);
+      };
+    }
+    const observer = new MutationObserver(() => {
+      console.log("Changes in Cart");
+      debouncedMyTimer();
+    });
+    const debouncedMyTimer = debounce(() => {
+      observer.disconnect();
+      enableGokwikCart();
+      observer.observe(targetElement, { childList: true, subtree: true });
+    }, 1000);
+    function enableGokwikCart() {
+        $('.gokwik-checkout button').prop('disabled', false);
+                $('.gokwik-checkout button').removeClass('disabled');
+  
+    }
+    const config = { childList: true, subtree: true };
+    observer.observe(targetElement, config);
+  });
+  </script>
+  
+  <style>
+  
+  .gokwik-checkout {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: end;
+    margin-bottom: 10px;
+  }
+  .gokwik-checkout button {
+    max-width:100%;
+   width: 400px!important;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #093174;
+    position: relative;
+    margin: 0;
+    padding: 5px 10px;
+    height:46px;
+  }
+  #gokwik-buy-now.disabled, .gokwik-disabled{
+    opacity:0.5;
+    cursor: not-allowed;
+    }
+    .gokwik-checkout button:focus {
+    outline: none;
+  }
+  .gokwik-checkout button > span {
+    display: flex;
+  }
+  .gokwik-checkout button > span.btn-text {
+    display: flex;
+    flex-direction: column;
+    color: #ffffff;
+    align-items: flex-start;
+  }
+  .gokwik-checkout button > span.btn-text > span:last-child {
+    padding-top: 2px;
+      font-size: 10px;
+      line-height: 10px;
+      text-transform: initial;
+  }
+  .gokwik-checkout button > span.btn-text > span:first-child {
+     font-size: 12px;
+      font-family: 'Metropolis Regular', sans-serif;
+      letter-spacing: 3px;
+      font-weight: 800;
+  }
+  .gokwik-checkout button > span.pay-opt-icon img:first-child {
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+  /*   Additional */
+  
+  .button-container {
+      display: flex;
+      flex-direction: column;
+  }
+  .button-container a.button.button--secondary {
+      width: 100%!important;
+  }
+    .gokwik-checkout button.disabled{
+    opacity:0.5;
+    cursor: not-allowed;
+    }
+  .gokwik-checkout button.disabled .addloadr#btn-loader{
+     display: block!important;
+  }
+    #gokwik-buy-now.disabled .addloadr#btn-loader{
+     display: block!important;
+  }
+  
+    
+  
+   #gokwik-buy-now {
+     background: #093174;
+     width: 100%!important;
+     color: #ffffff;
+     cursor: pointer;
+     line-height: 1;
+     border: none;
+     padding: 15px 10px;
+     font-size: 12px;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+     position:relative;
+        font-family: 'Metropolis Regular', sans-serif;
+      letter-spacing: 3px;
+      font-weight: 800;
+    height: 50px;
+   }
+  
+    
+  
+  /* Loader CSS */
+    #btn-loader{
+      display: none;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      justify-content: center;
+      align-items: center;
+      background:#093174;
+      border-radius:2.5rem;
+      
+    } 
+  
+  .cir-loader,
+  .cir-loader:after {
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+  }
+  .cir-loader {
+    margin: 6px auto;
+    font-size: 10px;
+    position: relative;
+    text-indent: -9999em;
+    border-top: 0.5em solid rgba(255, 255, 255, 0.2);
+    border-right: 0.5em solid rgba(255, 255, 255, 0.2);
+    border-bottom: 0.5em solid rgba(255, 255, 255, 0.2);
+    border-left: 0.5em solid #ffffff;
+    -webkit-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-animation: load8 1.1s infinite linear;
+    animation: load8 1.1s infinite linear;
+  }
+  @-webkit-keyframes load8 {
+    0% {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes load8 {
+    0% {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+  </style> 
+  
+  
+  
+      <!-- Google tag (gtag.js) -->
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-ZJTL6443JR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config','G-ZJTL6443JR',{ 'groups': 'GA4'});
+  </script>
+  
+  
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta name="theme-color" content="">
+      <meta name="apple-itunes-app" content="app-id=6473635703"><link rel="canonical" href="https://sudathi.com/collections/premium-sarees"><link rel="preconnect" href="https://cdn.shopify.com" crossorigin="">
+  
+      
+  
+  
+  
+    
+  <link rel="icon" type="image/png" href="images/Sudathi_cf9eec63-cff4-4fc1-9d61-93f715a065fc.png"><link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin=""><title>
+        Sudathi - Known For Best Quality Premium Sarees
+  </title><meta name="description" content="Shop for best designer premium quality Banarasi and kanjivaram sarees. Explore our latest sarees collection at best price for women. Choose from a wide range of designer festive wear sarees.">
+  <script>window.performance && window.performance.mark && window.performance.mark('shopify.content_for_header.start');</script><meta name="google-site-verification" content="e-UvfDqVgzOuzR5bBxwQnkEfgvs5-K9DPSjqkbTp9bc">
+  <meta id="shopify-digital-wallet" name="shopify-digital-wallet" content="/81871077663/digital_wallets/dialog">
+  <link rel="alternate" type="application/atom+xml" title="Feed" href="/collections/premium-sarees.atom">
+  <link rel="next" href="/collections/premium-sarees?page=2">
+  <link rel="alternate" type="application/json+oembed" href="https://sudathi.com/collections/premium-sarees.oembed">
+  <script async="async" src="./app/assets/js/preloads.js"></script>
+  <script async="async" crossorigin="anonymous" src="./app/assets/js/preloads_1.js"></script>
+  <script id="shopify-features" type="application/json">{"accessToken":"472d6bd3d4c0d04f4b2be38448ff44af","betas":["rich-media-storefront-analytics"],"domain":"sudathi.com","predictiveSearch":true,"shopId":81871077663,"smart_payment_buttons_url":"https:\/\/sudathi.com\/cdn\/shopifycloud\/payment-sheet\/assets\/latest\/spb.en.js","dynamic_checkout_cart_url":"https:\/\/sudathi.com\/cdn\/shopifycloud\/payment-sheet\/assets\/latest\/dynamic-checkout-cart.en.js","locale":"en"}</script>
+  <script>var Shopify = Shopify || {};
+  Shopify.shop = "leemboodi-new.myshopify.com";
+  Shopify.locale = "en";
+  Shopify.currency = {"active":"INR","rate":"1.0"};
+  Shopify.country = "IN";
+  Shopify.theme = {"name":"Sudathi Mother's Day","id":163093348639,"theme_store_id":null,"role":"main"};
+  Shopify.theme.handle = "null";
+  Shopify.theme.style = {"id":null,"handle":null};
+  Shopify.cdnHost = "sudathi.com/cdn";
+  Shopify.routes = Shopify.routes || {};
+  Shopify.routes.root = "/";</script>
+  <script type="module">!function(o){(o.Shopify=o.Shopify||{}).modules=!0}(window);</script>
+  <script>!function(o){function n(){var o=[];function n(){o.push(Array.prototype.slice.apply(arguments))}return n.q=o,n}var t=o.Shopify=o.Shopify||{};t.loadFeatures=n(),t.autoloadFeatures=n()}(window);</script>
+  <script id="shop-js-features" type="application/json">{"compact":true}</script>
+  <script id="shop-js-analytics" type="application/json">{"pageType":"collection"}</script>
+  <script>(function() {
+    function asyncLoad() {
+      var urls = ["https:\/\/cdn1.judge.me\/assets\/installed.js?shop=leemboodi-new.myshopify.com","https:\/\/logisy.s3.amazonaws.com\/logisy-theme.js?shop=leemboodi-new.myshopify.com","https:\/\/d2fk970j0emtue.cloudfront.net\/shop\/js\/free-gift-cart-upsell-pro.min.js?shop=leemboodi-new.myshopify.com","https:\/\/cdn.s3.pop-convert.com\/pcjs.production.min.js?unique_id=leemboodi-new.myshopify.com\u0026shop=leemboodi-new.myshopify.com","https:\/\/script.pop-convert.com\/new-micro\/production.pc.min.js?unique_id=leemboodi-new.myshopify.com\u0026shop=leemboodi-new.myshopify.com"];
+      for (var i = 0; i < urls.length; i++) {
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = urls[i];
+        var x = document.getElementsByTagName('script')[0];
+        x.parentNode.insertBefore(s, x);
+      }
+    };
+    document.addEventListener('asyncLazyLoad',function(event){asyncLoad();});if(window.attachEvent) {
+      window.attachEvent('onload', function(){});
+    } else {
+      window.addEventListener('load', function(){}, false);
+    }
+  })();</script>
+  <script id="__st">var __st={"a":81871077663,"offset":19800,"reqid":"6b168cd8-1b01-4a25-8107-9757da7acffc-1725528529","pageurl":"sudathi.com\/collections\/premium-sarees","u":"196de7a8278a","p":"collection","rtyp":"collection","rid":465801314591};</script>
+  <script>window.ShopifyPaypalV4VisibilityTracking = true;</script>
+  <script id="form-persister">!function(){'use strict';const t='contact',e='new_comment',n=[[t,t],['blogs',e],['comments',e],[t,'customer']],o='password',r='form_key',c=['recaptcha-v3-token','g-recaptcha-response','h-captcha-response',o],s=()=>{try{return window.sessionStorage}catch{return}},i=t=>t.elements[r],u=function(){const t=[...n].map((([t,e])=>`form[action*='/${t}']:not([data-nocaptcha='true']) input[name='form_type'][value='${e}']`)).join(',');var e;return e=t,()=>e?[...document.querySelectorAll(e)].map((t=>t.form)):[]}();function a(t){const e=i(t);u().includes(t)&&(!e||!e.value)&&function(t){try{if(!s())return;!function(t){const e=s();if(!e)return;const n=i(t);if(!n)return;const o=n.value;o&&e.removeItem(o)}(t);const e=Array.from(Array(32),(()=>Math.random().toString(36)[2])).join('');!function(t,e){i(t)||t.append(Object.assign(document.createElement('input'),{type:'hidden',name:r})),t.elements[r].value=e}(t,e),function(t,e){const n=s();if(!n)return;const r=[...t.querySelectorAll(`input[type='${o}']`)].map((({name:t})=>t)),i=[...c,...r],u={};for(const[o,c]of new FormData(t).entries())i.includes(o)||(u[o]=c);n.setItem(e,JSON.stringify(u))}(t,e)}catch(e){console.error('failed to persist form',e)}}(t)}const m=t=>{if('true'===t.dataset.persistBound)return;const e=function(t,e){const n=function(t){return'function'==typeof t.submit?t.submit:HTMLFormElement.prototype.submit}(t).bind(t);return function(){let t;return()=>{t||(t=!0,(()=>{try{e(),n()}catch(t){(t=>{console.error('form submit failed',t)})(t)}})(),setTimeout((()=>t=!1),250))}}()}(t,(()=>{a(t)}));!function(t,e){if('function'==typeof t.submit&&'function'==typeof e)try{t.submit=e}catch{}}(t,e),t.addEventListener('submit',(t=>{t.preventDefault(),e()})),t.dataset.persistBound='true'};!function(){function t(t){const e=(t=>{const e=t.target;return e instanceof HTMLFormElement?e:e&&e.form})(t);e&&a(e)}document.addEventListener('submit',t),document.addEventListener('asyncLazyLoad',(()=>{const e=u();for(const t of e)m(t);var n;n=document.body,new window.MutationObserver((t=>{for(const e of t)if('childList'===e.type&&e.addedNodes.length)for(const t of e.addedNodes)1===t.nodeType&&'FORM'===t.tagName&&u().includes(t)&&m(t)})).observe(n,{childList:!0,subtree:!0,attributes:!1}),document.removeEventListener('submit',t)}))}()}();</script>
+  <script data-source-attribution="shopify.loadfeatures" defer="defer" crossorigin="anonymous" src="./app/assets/js/load_feature-9f951eb7d8d53973c719de211f807d63af81c644e5b9a6ae72661ac408d472f6.js"></script>
+  <script data-source-attribution="shopify.dynamic-checkout" defer="defer" crossorigin="anonymous" src="./app/assets/js/features-1c0b396bd4d054b94abae1eb6a1bd6ba47beb35525c57a217c77a862ff06d83f.js"></script>
+  <script id="sections-script" data-sections="header,footer" defer="defer" src="./app/assets/js/scripts.js"></script>
+  
+  <script>window.performance && window.performance.mark && window.performance.mark('shopify.content_for_header.end');</script>
+  <script>
+    if(void 0!==Shopify.shop?"leemboodi-new.myshopify.com"!==Shopify.shop&&(alert("Unauthorised use of code detected. Refrain from using the copyrighted code without prior permission."),console.log("Unauthorised use of code detected. Refrain from using the copyrighted code without prior permission.")):(alert("Unauthorised use of code detected. Refrain from using the copyrighted code without prior permission."),console.log("Unauthorised use of code detected. Refrain from using the copyrighted code without prior permission.")),navigator.userAgent.indexOf("ghthou")>1||navigator.userAgent.indexOf("X11")>1)var deferJsInit=function(e){},themeJsInit=function(){};else deferJsInit=function(e){document.write(e)},themeJsInit=function(){var e=!1;function t(){if(!e){e=!0,document.querySelectorAll("iframe.lazy").forEach(e=>{datasrc=e.dataset.src,null!=datasrc&&(e.src=datasrc)});var t=document.getElementsByTagName("script");for(i=0;i<t.length;i++)if(null!==t[i].getAttribute("data-src")&&(t[i].setAttribute("src",t[i].getAttribute("data-src")),delete t[i].dataset.src),"lazyloadscript"==t[i].getAttribute("type")){for(var n=document.createElement("script"),o=0;o<t[i].attributes.length;o++){var r=t[i].attributes[o];n.setAttribute(r.name,r.value)}n.type="text/javascript",n.innerHTML=t[i].innerHTML,t[i].parentNode.removeChild(t[i]),t[i].parentNode.insertBefore(n,t[i])}var d=document.getElementsByTagName("link");for(i=0;i<d.length;i++)null!==d[i].getAttribute("data-href")&&(d[i].setAttribute("href",d[i].getAttribute("data-href")),delete d[i].dataset.href);document.dispatchEvent(new CustomEvent("StartKernelLoading")),setTimeout(function(){document.dispatchEvent(new CustomEvent("asyncLazyLoad"))},40)}}window.addEventListener("scroll",function(e){t()}),window.addEventListener("mousemove",function(){t()}),window.addEventListener("touchstart",function(){t()}),window.addEventListener?window.addEventListener("load",function(){setTimeout(t,10)},!1):window.attachEvent?window.attachEvent("onload",function(){setTimeout(t,10)}):window.onload=t};
+  </script> 
+      
+  <meta property="og:site_name" content="Sudathi"><meta property="og:url" content="https://sudathi.com/collections/premium-sarees"><meta property="og:title" content="Sudathi - Known For Best Quality Premium Sarees"><meta property="og:type" content="product.group"><meta property="og:description" content="Shop for best designer premium quality Banarasi and kanjivaram sarees. Explore our latest sarees collection at best price for women. Choose from a wide range of designer festive wear sarees."><meta property="og:image" content="images/Untitled_design_3_8470dd6d-67e1-4d53-bc7e-c87b4ba94e38.png"><meta property="og:image:secure_url" content="images/Untitled_design_3_8470dd6d-67e1-4d53-bc7e-c87b4ba94e38.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="628"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Sudathi - Known For Best Quality Premium Sarees"><meta name="twitter:description" content="Shop for best designer premium quality Banarasi and kanjivaram sarees. Explore our latest sarees collection at best price for women. Choose from a wide range of designer festive wear sarees.">
+  
+      <script src="./app/assets/js/vendor-v4.js" defer="defer"></script>
+      <script src="./app/assets/js/global.js" defer="defer"></script>
+      <script src="./app/assets/js/custom.js" defer="defer"></script>
+  <style data-shopify="">/* @font-face {
+    font-family: "Twentieth Century";
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    src: url("//sudathi.com/cdn/fonts/twentieth_century/twentiethcentury_n4.1a7b2b68023505e1927302cc60a155187098ca59.woff2?h1=bGVlbWJvb2RpLW5ldy5hY2NvdW50Lm15c2hvcGlmeS5jb20&h2=c3VkYXRoaS5teXNob3BpZnkuY29t&h3=c3VkYXRoaS5jb20&hmac=2a193e2f282048de5c7377e5c910197843c7b9f7f4c5847b2efbd8952ac1ff3f") format("woff2"),
+         url("//sudathi.com/cdn/fonts/twentieth_century/twentiethcentury_n4.2bd9ba3193feaaeabefe6059cf0ba7e11c41e810.woff?h1=bGVlbWJvb2RpLW5ldy5hY2NvdW50Lm15c2hvcGlmeS5jb20&h2=c3VkYXRoaS5teXNob3BpZnkuY29t&h3=c3VkYXRoaS5jb20&hmac=dfe6249f4e0734807bd88e263ddd94302d39af9440ef0568e25379d4dcdf15e8") format("woff");
+  }
+  
+    @font-face {
+    font-family: "Twentieth Century";
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+    src: url("//sudathi.com/cdn/fonts/twentieth_century/twentiethcentury_n6.0d3b76303d4b4a3612edbc69654ac2a8ca6886a4.woff2?h1=bGVlbWJvb2RpLW5ldy5hY2NvdW50Lm15c2hvcGlmeS5jb20&h2=c3VkYXRoaS5teXNob3BpZnkuY29t&h3=c3VkYXRoaS5jb20&hmac=d5c09df1f9974315ccdfef73bdb59096dbec49bb334c7c68526cb3210ab16677") format("woff2"),
+         url("//sudathi.com/cdn/fonts/twentieth_century/twentiethcentury_n6.c396df293741c34c7c780d8677bc681d3c3ecd42.woff?h1=bGVlbWJvb2RpLW5ldy5hY2NvdW50Lm15c2hvcGlmeS5jb20&h2=c3VkYXRoaS5teXNob3BpZnkuY29t&h3=c3VkYXRoaS5jb20&hmac=9dee659e9c3223c6717837eaf963a414e3967ae27be8aa6345081b2e106ce67c") format("woff");
+  }
+  
+    
+    
+    @font-face {
+    font-family: "Gill Sans Nova";
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    src: url("//sudathi.com/cdn/fonts/gill_sans_nova/gillsansnova_n4.bb07ca19f1ff19b6ca9f72c55add75de6c568354.woff2?h1=bGVlbWJvb2RpLW5ldy5hY2NvdW50Lm15c2hvcGlmeS5jb20&h2=c3VkYXRoaS5teXNob3BpZnkuY29t&h3=c3VkYXRoaS5jb20&hmac=da0401c83fbeaa4729806d69a58ca637152d8d896c916adbdc939afc0bfe05ff") format("woff2"),
+         url("//sudathi.com/cdn/fonts/gill_sans_nova/gillsansnova_n4.4d765821604d183de75a5db211fbf52345d31d03.woff?h1=bGVlbWJvb2RpLW5ldy5hY2NvdW50Lm15c2hvcGlmeS5jb20&h2=c3VkYXRoaS5teXNob3BpZnkuY29t&h3=c3VkYXRoaS5jb20&hmac=ceff479bbc59d5508b28d3552d9644cb315dc80a2d68b8299c1c9720f8c40e3a") format("woff");
+  }
+  
+    @font-face {
+    font-family: "Gill Sans Nova";
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+    src: url("//sudathi.com/cdn/fonts/gill_sans_nova/gillsansnova_n6.5f4190c74a69fdd8796d1db47dc78ecd9c91f261.woff2?h1=bGVlbWJvb2RpLW5ldy5hY2NvdW50Lm15c2hvcGlmeS5jb20&h2=c3VkYXRoaS5teXNob3BpZnkuY29t&h3=c3VkYXRoaS5jb20&hmac=c9a364e56a0306e33227da5be109586907fc9b7319c436673b7115b085ebae84") format("woff2"),
+         url("//sudathi.com/cdn/fonts/gill_sans_nova/gillsansnova_n6.90ac1f5739faa1cc2415577a07defbc59fa8a833.woff?h1=bGVlbWJvb2RpLW5ldy5hY2NvdW50Lm15c2hvcGlmeS5jb20&h2=c3VkYXRoaS5teXNob3BpZnkuY29t&h3=c3VkYXRoaS5jb20&hmac=d74ce0766942ffa3ee9a3555016479a811279edbc7d1a0ef5d500a0f98bad6be") format("woff");
+  }
+   */
+  
+    :root {
+      --be-yours-version: "6.8.0";
+      --font-body-family: "Twentieth Century", sans-serif;
+      --font-body-style: normal;
+      --font-body-weight: 400;
+  
+      --font-heading-family: "Gill Sans Nova", sans-serif;
+      --font-heading-style: normal;
+      --font-heading-weight: 400;
+  
+      --font-body-scale: 1.0;
+      --font-heading-scale: 1.0;
+  
+      --font-navigation-family: var(--font-heading-family);
+      --font-navigation-size: 12px;
+      --font-navigation-weight: var(--font-heading-weight);
+      --font-button-family: var(--font-body-family);
+      --font-button-size: 12px;
+      --font-button-baseline: 0.2rem;
+      --font-price-family: var(--font-heading-family);
+      --font-price-scale: var(--font-heading-scale);
+  
+      --color-base-text: 33, 35, 38;
+      --color-base-background: 255, 255, 255;
+      --color-base-solid-button-labels: 255, 255, 255;
+      --color-base-outline-button-labels: 33, 35, 38;
+      --color-base-accent: 9, 49, 116;
+      --color-base-heading: 26, 27, 24;
+      --color-base-border: 210, 213, 217;
+      --color-placeholder: 243, 243, 243;
+      --color-overlay: 33, 35, 38;
+      --color-keyboard-focus: 135, 173, 245;
+      --color-shadow: 250, 234, 161;
+      --shadow-opacity: 1;
+  
+      --color-background-dark: 235, 235, 235;
+      --color-price: #1a1b18;
+      --color-sale-price: #d72c0d;
+      --color-reviews: #093174;
+      --color-critical: #d72c0d;
+      --color-success: #008060;
+  
+      --payment-terms-background-color: #ffffff;
+      --page-width: 160rem;
+      --page-width-margin: 0rem;
+  
+      --card-color-scheme: var(--color-placeholder);
+      --card-text-alignment: start;
+      --card-flex-alignment: flex-start;
+      --card-image-padding: 0px;
+      --card-border-width: 0px;
+      --card-radius: 20px;
+      --card-shadow-horizontal-offset: 0px;
+      --card-shadow-vertical-offset: 0px;
+      
+      --button-radius: 0px;
+      --button-border-width: 1px;
+      --button-shadow-horizontal-offset: 0px;
+      --button-shadow-vertical-offset: 0px;
+  
+      --spacing-sections-desktop: 0px;
+      --spacing-sections-mobile: 0px;
+    }
+  
+    *,
+    *::before,
+    *::after {
+      box-sizing: inherit;
+    }
+  
+    html {
+      box-sizing: border-box;
+      font-size: calc(var(--font-body-scale) * 62.5%);
+      height: 100%;
+    }
+  
+    body {
+      min-height: 100%;
+      margin: 0;
+      font-size: 1.5rem;
+      letter-spacing: 0.06rem;
+      line-height: calc(1 + 0.8 / var(--font-body-scale));
+      font-family: var(--font-body-family);
+      font-style: var(--font-body-style);
+      font-weight: var(--font-body-weight);
+    }
+  
+    @media screen and (min-width: 750px) {
+      body {
+        font-size: 1.6rem;
+      }
+    }</style><style data-shopify="">
+  /* Custom Fonts */
+  
+  @font-face {
+    font-family: 'Metropolis Regular';
+    font-style: normal;
+    font-display: swap;
+    font-weight: normal;
+    src: local('Metropolis Regular'), url('fonts/Metropolis-Regular_1.woff') format('woff');
+    src: url(fonts/Metropolis-Regular.woff);
+    }
+    
+  
+    @font-face {
+    font-family: 'Metropolis Regular Italic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Metropolis Regular Italic'), url('fonts/Metropolis-RegularItalic.woff') format('woff');
+    src: url(fonts/Metropolis-RegularItalic_1.woff);
+    }
+    
+  
+    @font-face {
+    font-family: 'Metropolis Extra Light';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Metropolis Extra Light'), url('fonts/Metropolis-ExtraLight.woff') format('woff');
+    src: url(fonts/Metropolis-ExtraLight_1.woff);
+    }
+    
+  
+    @font-face {
+    font-family: 'Metropolis Light';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Metropolis Light'), url('fonts/Metropolis-Light.woff') format('woff');
+    src: url(fonts/Metropolis-Light_1.woff);
+    }
+    
+  
+    @font-face {
+    font-family: 'Metropolis Thin';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Metropolis Thin'), url('fonts/Metropolis-Thin.woff') format('woff');
+    src: url(fonts/Metropolis-Thin_1.woff);
+    }
+    
+  
+    @font-face {
+    font-family: 'Metropolis Extra Light Italic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Metropolis Extra Light Italic'), url('fonts/Metropolis-ExtraLightItalic.woff') format('woff');
+    src: url(fonts/Metropolis-ExtraLightItalic_1.woff);
+    }
+    
+  
+    @font-face {
+    font-family: 'Metropolis Light Italic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Metropolis Light Italic'), url('fonts/Metropolis-LightItalic.woff') format('woff');
+    src: url(fonts/Metropolis-LightItalic_1.woff);
+    }
+    
+  
+    @font-face {
+    font-family: 'Metropolis Thin Italic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Metropolis Thin Italic'), url('fonts/Metropolis-ThinItalic.woff') format('woff');
+    src: url(fonts/Metropolis-ThinItalic_1.woff);
+    }
+    
+  
+    @font-face {
+    font-family: 'Metropolis Medium';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Metropolis Medium'), url('fonts/Metropolis-Medium.woff') format('woff');
+    src: url(fonts/Metropolis-Medium_1.woff);
+    }
+    
+  
+    @font-face {
+    font-family: 'Metropolis Semi Bold';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Metropolis Semi Bold'), url('fonts/Metropolis-SemiBold.woff') format('woff');
+    src: url(fonts/Metropolis-SemiBold_1.woff);
+    }
+    
+  
+    @font-face {
+    font-family: 'Metropolis Bold';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Metropolis Bold'), url('fonts/Metropolis-Bold_1.woff') format('woff');
+    src: url(fonts/Metropolis-Bold.woff);
+    }
+    
+  
+    @font-face {
+    font-family: 'Metropolis Bold Italic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Metropolis Bold Italic'), url('fonts/Metropolis-BoldItalic.woff') format('woff');
+    src: url(fonts/Metropolis-BoldItalic_1.woff);
+    }
+    
+  
+    @font-face {
+    font-family: 'Metropolis Medium Italic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Metropolis Medium Italic'), url('fonts/Metropolis-MediumItalic.woff') format('woff');
+    src: url(fonts/Metropolis-MediumItalic_1.woff);
+    }
+    
+  
+    @font-face {
+    font-family: 'Metropolis Semi Bold Italic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Metropolis Semi Bold Italic'), url('fonts/Metropolis-SemiBoldItalic.woff') format('woff');
+    src: url(fonts/Metropolis-SemiBoldItalic_1.woff);
+    }
+    
+  
+    @font-face {
+    font-family: 'Metropolis Extra Bold';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Metropolis Extra Bold'), url('fonts/Metropolis-ExtraBold.woff') format('woff');
+    src: url(fonts/Metropolis-ExtraBold_1.woff);
+    }
+    
+  
+    @font-face {
+    font-family: 'Metropolis Extra Bold Italic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Metropolis Extra Bold Italic'), url('fonts/Metropolis-ExtraBoldItalic.woff') format('woff');
+    src: url(fonts/Metropolis-ExtraBoldItalic_1.woff);
+    }
+    
+  
+    @font-face {
+    font-family: 'Metropolis Black';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Metropolis Black'), url('fonts/Metropolis-Black.woff') format('woff');
+    src: url(fonts/Metropolis-Black_1.woff);
+    }
+    
+  
+    @font-face {
+    font-family: 'Metropolis Black Italic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Metropolis Black Italic'), url('fonts/Metropolis-BlackItalic.woff') format('woff');
+    src: url(fonts/Metropolis-BlackItalic_1.woff);
+    }
+  
+  body{
+    font-family: 'Metropolis Regular', sans-serif;
+    font-weight: 400;
+    font-display: swap;
+  }
+  :root{
+      --font-heading-family: 'Metropolis Regular', sans-serif;
+      --font-body-family: 'Metropolis Regular', sans-serif;
+      --font-navigation-family: 'Metropolis Bold', sans-serif;
+      --font-price-family: 'Metropolis Bold', sans-serif;
+      --font-button-family: 'Metropolis Bold', sans-serif;
+      --font-heading-weight: 400;
+      --font-body-weight: 400;
+      --font-navigation-weight: 600;
+      --font-price-weight: 600;
+      --font-button-weight: 600;
+  }
+  </style><link href="./app/assets/css/custom.css" rel="stylesheet" type="text/css" media="all"><link href="./app/assets/css/base.css" rel="stylesheet" type="text/css" media="all">
+  <link rel="stylesheet" href="./app/assets/css/component-predictive-search.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="./app/assets/css/component-color-swatches.css" media="print" onload="this.media='all'"><script>document.documentElement.className = document.documentElement.className.replace('no-js', 'js');</script>
+      <meta name="google-site-verification" content="mTpWvU54IxbwJmtt8JghxzKz6RQT4IThSceFHr3X_BM">
+      <meta name="facebook-domain-verification" content="0c9c888dbipap4yu58lmcr1htlksk3">
+      
+  <script>
+  var ignore_csapp_cart_reload = true;
+  </script>
+    
+  
+  
+      
+  
+  
+  
+  
+      <!-- Google tag (gtag.js) -->
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=AW-16658895684"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'AW-16658895684');
+  </script>
+  
+  <!-- Global Site Tag (gtag.js) - Google AdWords: 16658895684 -->
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=AW-16658895684"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-16658895684', {'send_page_view': false});
+  </script>
+      
+  
+      
+  <!-- BEGIN app block: shopify://apps/judge-me-product-reviews/blocks/judgeme_core/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8 --><!-- Start of Judge.me Core -->
+  <link rel="dns-prefetch" href="https://cdn.judge.me">
+  <script data-cfasync="false" class="jdgm-settings-script">window.jdgmSettings={"pagination":5,"disable_web_reviews":false,"badge_no_review_text":"No reviews","badge_n_reviews_text":"{{ n }} review/reviews","badge_star_color":"#093174","hide_badge_preview_if_no_reviews":true,"badge_hide_text":false,"enforce_center_preview_badge":false,"widget_title":"Customer Reviews","widget_open_form_text":"Write a review","widget_close_form_text":"Cancel review","widget_refresh_page_text":"Refresh page","widget_summary_text":"Based on {{ number_of_reviews }} review/reviews","widget_no_review_text":"Be the first to write a review","widget_name_field_text":"Name","widget_verified_name_field_text":"Verified Name (public)","widget_name_placeholder_text":"Enter your name (public)","widget_required_field_error_text":"This field is required.","widget_email_field_text":"Email","widget_verified_email_field_text":"Verified Email (private, can not be edited)","widget_email_placeholder_text":"Enter your email (private)","widget_email_field_error_text":"Please enter a valid email address.","widget_rating_field_text":"Rating","widget_review_title_field_text":"Review Title","widget_review_title_placeholder_text":"Give your review a title","widget_review_body_field_text":"Review","widget_review_body_placeholder_text":"Write your comments here","widget_pictures_field_text":"Picture/Video (optional)","widget_submit_review_text":"Submit Review","widget_submit_verified_review_text":"Submit Verified Review","widget_submit_success_msg_with_auto_publish":"Thank you! Please refresh the page in a few moments to see your review. You can remove or edit your review by logging into \u003ca href='https://judge.me/login' target='_blank' rel='nofollow noopener'\u003eJudge.me\u003c/a\u003e","widget_submit_success_msg_no_auto_publish":"Thank you! Your review will be published as soon as it is approved by the shop admin. You can remove or edit your review by logging into \u003ca href='https://judge.me/login' target='_blank' rel='nofollow noopener'\u003eJudge.me\u003c/a\u003e","widget_show_default_reviews_out_of_total_text":"Showing {{ n_reviews_shown }} out of {{ n_reviews }} reviews.","widget_show_all_link_text":"Show all","widget_show_less_link_text":"Show less","widget_author_said_text":"{{ reviewer_name }} said:","widget_days_text":"{{ n }} days ago","widget_weeks_text":"{{ n }} week/weeks ago","widget_months_text":"{{ n }} month/months ago","widget_years_text":"{{ n }} year/years ago","widget_yesterday_text":"Yesterday","widget_today_text":"Today","widget_replied_text":"\u003e\u003e {{ shop_name }} replied:","widget_read_more_text":"Read more","widget_rating_filter_see_all_text":"See all reviews","widget_sorting_most_recent_text":"Most Recent","widget_sorting_highest_rating_text":"Highest Rating","widget_sorting_lowest_rating_text":"Lowest Rating","widget_sorting_with_pictures_text":"Only Pictures","widget_sorting_most_helpful_text":"Most Helpful","widget_open_question_form_text":"Ask a question","widget_reviews_subtab_text":"Reviews","widget_questions_subtab_text":"Questions","widget_question_label_text":"Question","widget_answer_label_text":"Answer","widget_question_placeholder_text":"Write your question here","widget_submit_question_text":"Submit Question","widget_question_submit_success_text":"Thank you for your question! We will notify you once it gets answered.","widget_star_color":"#093174","verified_badge_text":"Verified","verified_badge_placement":"left-of-reviewer-name","widget_hide_border":false,"widget_social_share":false,"widget_thumb":false,"widget_review_location_show":false,"widget_location_format":"country_iso_code","all_reviews_include_out_of_store_products":true,"all_reviews_out_of_store_text":"(out of store)","all_reviews_product_name_prefix_text":"about","enable_review_pictures":true,"enable_question_anwser":false,"review_date_format":"dd/mm/yyyy","widget_product_reviews_subtab_text":"Product Reviews","widget_shop_reviews_subtab_text":"Shop Reviews","widget_sorting_pictures_first_text":"Pictures First","floating_tab_button_name":"Customer Reviews","floating_tab_title":"Let customers speak for us","floating_tab_button_color":"#FFFFFF","floating_tab_button_background_color":"#093174","floating_tab_url":"","floating_tab_url_enabled":false,"all_reviews_text_badge_text":"Customers rate us {{ shop.metafields.judgeme.all_reviews_rating | round: 1 }}/5 based on {{ shop.metafields.judgeme.all_reviews_count }} reviews.","all_reviews_text_badge_text_branded_style":"{{ shop.metafields.judgeme.all_reviews_rating | round: 1 }} out of 5 stars based on {{ shop.metafields.judgeme.all_reviews_count }} reviews","all_reviews_text_badge_url":"","all_reviews_text_style":"branded","all_reviews_text_color_style":"custom","all_reviews_text_color":"#093174","featured_carousel_title":"Customer Reviews","featured_carousel_count_text":"from {{ n }} reviews","featured_carousel_add_link_to_all_reviews_page":true,"featured_carousel_url":"","featured_carousel_show_images":false,"featured_carousel_height":200,"verified_count_badge_style":"branded","verified_count_badge_url":"","widget_star_use_custom_color":true,"picture_reminder_submit_button":"Upload Pictures","widget_sorting_videos_first_text":"Videos First","widget_review_pending_text":"Pending","featured_carousel_items_for_large_screen":5,"remove_microdata_snippet":false,"preview_badge_no_question_text":"No questions","preview_badge_n_question_text":"{{ number_of_questions }} question/questions","remove_judgeme_branding":true,"widget_search_bar_placeholder":"Search reviews","widget_sorting_verified_only_text":"Verified only","featured_carousel_verified_badge_enable":true,"featured_carousel_verified_badge_color":"#1D2B62","featured_carousel_more_reviews_button_text":"Read more reviews","featured_carousel_view_product_button_text":"View product","all_reviews_page_load_reviews_on":"button_click","all_reviews_page_load_more_text":"Load More Reviews","widget_advanced_speed_features":5,"widget_public_name_text":"displayed publicly like","default_reviewer_name_has_non_latin":true,"widget_reviewer_anonymous":"Anonymous","medals_widget_title":"Judge.me Review Medals","medals_widget_background_color":"#000000","medals_widget_elements_color":"#093174","show_reviewer_avatar":false,"widget_invalid_yt_video_url_error_text":"Not a YouTube video URL","widget_max_length_field_error_text":"Please enter no more than {0} characters.","widget_verified_by_shop_text":"Verified by Shop","widget_load_with_code_splitting":true,"widget_ugc_title":"Made by us, Shared by you","widget_ugc_subtitle":"Tag us to see your picture featured in our page","widget_ugc_primary_button_text":"Buy Now","widget_ugc_secondary_button_text":"Load More","widget_ugc_reviews_button_text":"View Reviews","widget_primary_color":"#093174","widget_summary_average_rating_text":"{{ average_rating }} out of 5","widget_media_grid_title":"Customer photos \u0026 videos","widget_media_grid_see_more_text":"See more","widget_verified_by_judgeme_text":"Verified by Judge.me","widget_verified_by_judgeme_text_in_store_medals":"Verified by Judge.me","widget_media_field_exceed_quantity_message":"Sorry, we can only accept {{ max_media }} for one review.","widget_media_field_exceed_limit_message":"{{ file_name }} is too large, please select a {{ media_type }} less than {{ size_limit }}MB.","widget_review_submitted_text":"Review Submitted!","widget_question_submitted_text":"Question Submitted!","widget_close_form_text_question":"Cancel","widget_write_your_answer_here_text":"Write your answer here","widget_show_collected_by_judgeme":true,"widget_collected_by_judgeme_text":"collected by Judge.me","widget_load_more_text":"Load More","widget_full_review_text":"Full Review","widget_read_more_reviews_text":"Read More Reviews","widget_read_questions_text":"Read Questions","widget_questions_and_answers_text":"Questions \u0026 Answers","widget_verified_by_text":"Verified by","widget_number_of_reviews_text":"{{ number_of_reviews }} reviews","widget_back_button_text":"Back","widget_next_button_text":"Next","widget_custom_forms_filter_button":"Filters","how_reviews_are_collected":"How reviews are collected?","widget_gdpr_statement":"How we use your data: We’ll only contact you about the review you left, and only if necessary. By submitting your review, you agree to Judge.me’s \u003ca href='https://judge.me/terms' target='_blank' rel='nofollow noopener'\u003eterms\u003c/a\u003e, \u003ca href='https://judge.me/privacy' target='_blank' rel='nofollow noopener'\u003eprivacy\u003c/a\u003e and \u003ca href='https://judge.me/content-policy' target='_blank' rel='nofollow noopener'\u003econtent\u003c/a\u003e policies.","platform":"shopify","branding_url":"https://judge.me/reviews","branding_text":"Powered by Judge.me","locale":"en","reply_name":"Sudathi","widget_version":"3.0","footer":true,"autopublish":false,"review_dates":true,"enable_custom_form":false,"can_be_branded":false};</script> <style class="jdgm-settings-style">.jdgm-xx{left:0}:root{--jdgm-primary-color:#093174;--jdgm-secondary-color:rgba(9,49,116,0.1);--jdgm-star-color:#093174;--jdgm-write-review-text-color:white;--jdgm-write-review-bg-color:#093174;--jdgm-paginate-color:#093174;--jdgm-border-radius:0}.jdgm-histogram__bar-content{background-color:#093174}.jdgm-rev[data-verified-buyer=true] .jdgm-rev__icon.jdgm-rev__icon:after,.jdgm-rev__buyer-badge.jdgm-rev__buyer-badge{color:white;background-color:#093174}.jdgm-review-widget--small .jdgm-gallery.jdgm-gallery .jdgm-gallery__thumbnail-link:nth-child(8) .jdgm-gallery__thumbnail-wrapper.jdgm-gallery__thumbnail-wrapper:before{content:"See more"}@media only screen and (min-width: 768px){.jdgm-gallery.jdgm-gallery .jdgm-gallery__thumbnail-link:nth-child(8) .jdgm-gallery__thumbnail-wrapper.jdgm-gallery__thumbnail-wrapper:before{content:"See more"}}.jdgm-preview-badge .jdgm-star.jdgm-star{color:#093174}.jdgm-prev-badge[data-average-rating='0.00']{display:none !important}.jdgm-author-all-initials{display:none !important}.jdgm-author-last-initial{display:none !important}.jdgm-rev-widg__title{visibility:hidden}.jdgm-rev-widg__summary-text{visibility:hidden}.jdgm-prev-badge__text{visibility:hidden}.jdgm-rev__replier:before{content:'sudathi.com'}.jdgm-rev__prod-link-prefix:before{content:'about'}.jdgm-rev__out-of-store-text:before{content:'(out of store)'}@media only screen and (min-width: 768px){.jdgm-rev__pics .jdgm-rev_all-rev-page-picture-separator,.jdgm-rev__pics .jdgm-rev__product-picture{display:none}}@media only screen and (max-width: 768px){.jdgm-rev__pics .jdgm-rev_all-rev-page-picture-separator,.jdgm-rev__pics .jdgm-rev__product-picture{display:none}}.jdgm-preview-badge[data-template="product"]{display:none !important}.jdgm-preview-badge[data-template="collection"]{display:none !important}.jdgm-preview-badge[data-template="index"]{display:none !important}.jdgm-review-widget[data-from-snippet="true"]{display:none !important}.jdgm-verified-count-badget[data-from-snippet="true"]{display:none !important}.jdgm-carousel-wrapper[data-from-snippet="true"]{display:none !important}.jdgm-all-reviews-text[data-from-snippet="true"]{display:none !important}.jdgm-medals-section[data-from-snippet="true"]{display:none !important}.jdgm-ugc-media-wrapper[data-from-snippet="true"]{display:none !important}.jdgm-revs-tab-btn,.jdgm-revs-tab-btn:not([disabled]):hover,.jdgm-revs-tab-btn:focus{background-color:#093174}.jdgm-revs-tab-btn,.jdgm-revs-tab-btn:not([disabled]):hover{color:#FFFFFF}
+  </style>
+  
+    
+    
+    
+    <style class="jdgm-miracle-styles">
+    @-webkit-keyframes jdgm-spin{0%{-webkit-transform:rotate(0deg);-ms-transform:rotate(0deg);transform:rotate(0deg)}100%{-webkit-transform:rotate(359deg);-ms-transform:rotate(359deg);transform:rotate(359deg)}}@keyframes jdgm-spin{0%{-webkit-transform:rotate(0deg);-ms-transform:rotate(0deg);transform:rotate(0deg)}100%{-webkit-transform:rotate(359deg);-ms-transform:rotate(359deg);transform:rotate(359deg)}}@font-face{font-family:'JudgemeStar';src:url("data:application/x-font-woff;charset=utf-8;base64,d09GRgABAAAAAAScAA0AAAAABrAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABGRlRNAAAEgAAAABoAAAAcbyQ+3kdERUYAAARgAAAAHgAAACAAMwAGT1MvMgAAAZgAAABGAAAAVi+vS9xjbWFwAAAB8AAAAEAAAAFKwBMjvmdhc3AAAARYAAAACAAAAAj//wADZ2x5ZgAAAkAAAAEJAAABdH33LXtoZWFkAAABMAAAAC0AAAA2BroQKWhoZWEAAAFgAAAAHAAAACQD5QHQaG10eAAAAeAAAAAPAAAAFAYAAABsb2NhAAACMAAAAA4AAAAOAO4AeG1heHAAAAF8AAAAHAAAACAASgAvbmFtZQAAA0wAAADeAAABkorWfVZwb3N0AAAELAAAACkAAABEp3ubLXgBY2BkYADhPPP4OfH8Nl8ZuJkYQODS2fRrCPr/aSYGxq1ALgcDWBoAO60LkwAAAHgBY2BkYGDc+v80gx4TAwgASaAICmABAFB+Arl4AWNgZGBgYGPQYWBiAAIwyQgWc2AAAwAHVQB6eAFjYGRiYJzAwMrAwejDmMbAwOAOpb8ySDK0MDAwMbByMsCBAAMCBKS5pjA4PGB4wMR44P8BBj3GrQymQGFGkBwAjtgK/gAAeAFjYoAAEA1jAwAAZAAHAHgB3crBCcAwDEPRZydkih567CDdf4ZskmLwFBV8xBfCaC4BXkOUmx4sU0h2ngNb9V0vQCxaRKIAevT7fGWuBrEAAAAAAAAAAAA0AHgAugAAeAF9z79Kw1AUx/FzTm7un6QmJtwmQ5Bg1abgEGr/BAqlU6Gju+Cgg1MkQ/sA7Vj7BOnmO/gUvo2Lo14NqIO6/IazfD8HEODtmQCfoANwNsyp2/GJt3WKQrd1NLiYYWx2PBqOsmJMEOznPOTzfSCrhAtbbLdmeFLJV9eKd63WLrZcIcuaEVdssWCKM6pLCfTVOYbz/0pNSMSZKLIZpvh78sAUH6PlMrreTCabP9r+Z/puPZ2ur/RqpQHgh+MIegCnXeM4MRAPjYN//5tj4ZtTjkFqEdmeMShlEJ7tVAly2TAkx6R68Fl4E/aVvn8JqHFQ4JS1434gXKcuL31dDhzs3YbsEOAd/IU88gAAAHgBfY4xTgMxEEVfkk0AgRCioKFxQYd2ZRtpixxgRU2RfhU5q5VWseQ4JdfgAJyBlmNwAM7ABRhZQ0ORwp7nr+eZAa54YwYg9zm3ynPOeFRe8MCrciXOh/KSS76UV5L/iDmrLiS5AeU519wrL3jmSbkS5115yR2fyivJv9kx0ZMZ2RLZw27q87iNQi8EBo5FSPIMw3HqBboi5lKTGAGDp8FKXWP+t9TU01Lj5His1Ba6uM9dTEMwvrFmbf5GC/q2drW3ruXUhhsCiQOjznFlCzYhHUZp4xp76vsvQh89CQAAeAFjYGJABowM6IANLMrEyMTIzMjCXpyRWJBqZshWXJJYBKOMAFHFBucAAAAAAAAB//8AAngBY2BkYGDgA2IJBhBgAvKZGViBJAuYxwAABJsAOgAAeAFjYGBgZACCk535hiD60tn0azAaAEqpB6wAAA==") format("woff");font-weight:normal;font-style:normal}.jdgm-star{font-family:'JudgemeStar';display:inline !important;text-decoration:none !important;padding:0 4px 0 0 !important;margin:0 !important;font-weight:bold;opacity:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.jdgm-star:hover{opacity:1}.jdgm-star:last-of-type{padding:0 !important}.jdgm-star.jdgm--on:before{content:"\e000"}.jdgm-star.jdgm--off:before{content:"\e001"}.jdgm-star.jdgm--half:before{content:"\e002"}.jdgm-widget *{margin:0;line-height:1.4;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;-webkit-overflow-scrolling:touch}.jdgm-hidden{display:none !important;visibility:hidden !important}.jdgm-temp-hidden{display:none}.jdgm-spinner{width:40px;height:40px;margin:auto;border-radius:50%;border-top:2px solid #eee;border-right:2px solid #eee;border-bottom:2px solid #eee;border-left:2px solid #ccc;-webkit-animation:jdgm-spin 0.8s infinite linear;animation:jdgm-spin 0.8s infinite linear}.jdgm-prev-badge{display:block !important}
+  
+  </style>
+  
+  
+    
+    
+     
+  
+  
+  <script data-cfasync="false" class="jdgm-script">
+  !function(e){window.jdgm=window.jdgm||{},jdgm.CDN_HOST="https://cdn.judge.me/",
+  jdgm.docReady=function(d){(e.attachEvent?"complete"===e.readyState:"loading"!==e.readyState)?
+  setTimeout(d,0):e.addEventListener("DOMContentLoaded",d)},jdgm.loadCSS=function(d,t,o,a){
+  !o&&jdgm.loadCSS.requestedUrls.indexOf(d)>=0||(jdgm.loadCSS.requestedUrls.push(d),
+  (a=e.createElement("link")).rel="stylesheet",a.class="jdgm-stylesheet",a.media="nope!",
+  a.href=d,a.onload=function(){this.media="all",t&&setTimeout(t)},e.body.appendChild(a))},
+  jdgm.loadCSS.requestedUrls=[],jdgm.loadJS=function(e,d){var t=new XMLHttpRequest;
+  t.onreadystatechange=function(){4===t.readyState&&(Function(t.response)(),d&&d(t.response))},
+  t.open("GET",e),t.send()},jdgm.docReady((function(){(window.jdgmLoadCSS||e.querySelectorAll(
+  ".jdgm-widget, .jdgm-all-reviews-page").length>0)&&(jdgmSettings.widget_load_with_code_splitting?
+  parseFloat(jdgmSettings.widget_version)>=3?jdgm.loadCSS(jdgm.CDN_HOST+"widget_v3/base.css"):
+  jdgm.loadCSS(jdgm.CDN_HOST+"widget/base.css"):jdgm.loadCSS(jdgm.CDN_HOST+"shopify_v2.css"),
+  jdgm.loadJS(jdgm.CDN_HOST+"loader.js"))}))}(document);
+  </script>
+  <noscript><link rel="stylesheet" type="text/css" media="all" href="https://cdn.judge.me/shopify_v2.css"></noscript>
+  
+  <!-- BEGIN app snippet: theme_fix_tags --><script>
+    (function() {
+      var jdgmThemeFixes = null;
+      if (!jdgmThemeFixes) return;
+      var thisThemeFix = jdgmThemeFixes[Shopify.theme.id];
+      if (!thisThemeFix) return;
+  
+      if (thisThemeFix.html) {
+        document.addEventListener("DOMContentLoaded", function() {
+          var htmlDiv = document.createElement('div');
+          htmlDiv.classList.add('jdgm-theme-fix-html');
+          htmlDiv.innerHTML = thisThemeFix.html;
+          document.body.append(htmlDiv);
+        });
+      };
+  
+      if (thisThemeFix.css) {
+        var styleTag = document.createElement('style');
+        styleTag.classList.add('jdgm-theme-fix-style');
+        styleTag.innerHTML = thisThemeFix.css;
+        document.head.append(styleTag);
+      };
+  
+      if (thisThemeFix.js) {
+        var scriptTag = document.createElement('script');
+        scriptTag.classList.add('jdgm-theme-fix-script');
+        scriptTag.innerHTML = thisThemeFix.js;
+        document.head.append(scriptTag);
+      };
+    })();
+  </script>
+  <!-- END app snippet -->
+  <!-- End of Judge.me Core -->
+  
+  
+  
+  
+  <!-- END app app block --><link href="css/main.18c2ff20.chunk.css" rel="stylesheet" type="text/css" media="all">
+  <link href="https://monorail-edge.shopifysvc.com" rel="dns-prefetch">
+  <script>(function(){if ("sendBeacon" in navigator && "performance" in window) {var session_token = document.cookie.match(/_shopify_s=([^;]*)/);function handle_abandonment_event(e) {var entries = performance.getEntries().filter(function(entry) {return /monorail-edge.shopifysvc.com/.test(entry.name);});if (!window.abandonment_tracked && entries.length === 0) {window.abandonment_tracked = true;var currentMs = Date.now();var navigation_start = performance.timing.navigationStart;var payload = {shop_id: 81871077663,url: window.location.href,navigation_start,duration: currentMs - navigation_start,session_token: session_token && session_token.length === 2 ? session_token[1] : "",page_type: "collection"};window.navigator.sendBeacon("https://monorail-edge.shopifysvc.com/v1/produce", JSON.stringify({schema_id: "online_store_buyer_site_abandonment/1.1",payload: payload,metadata: {event_created_at_ms: currentMs,event_sent_at_ms: currentMs}}));}}window.addEventListener('pagehide', handle_abandonment_event);}}());</script>
+  <script id="web-pixels-manager-setup">(function d(d,e,r,a,n){var o,i,t,s,l=(i=(o={modern:/Edge?\/(1{2}[4-9]|1[2-9]\d|[2-9]\d{2}|\d{4,})\.\d+(\.\d+|)|Firefox\/(1{2}[4-9]|1[2-9]\d|[2-9]\d{2}|\d{4,})\.\d+(\.\d+|)|Chrom(ium|e)\/(9{2}|\d{3,})\.\d+(\.\d+|)|(Maci|X1{2}).+ Version\/(15\.\d+|(1[6-9]|[2-9]\d|\d{3,})\.\d+)([,.]\d+|)( \(\w+\)|)( Mobile\/\w+|) Safari\/|Chrome.+OPR\/(9{2}|\d{3,})\.\d+\.\d+|(CPU[ +]OS|iPhone[ +]OS|CPU[ +]iPhone|CPU IPhone OS|CPU iPad OS)[ +]+(15[._]\d+|(1[6-9]|[2-9]\d|\d{3,})[._]\d+)([._]\d+|)|Android:?[ /-](12[7-9]|1[3-9]\d|[2-9]\d{2}|\d{4,})(\.\d+|)(\.\d+|)|Android.+Firefox\/(12[7-9]|1[3-9]\d|[2-9]\d{2}|\d{4,})\.\d+(\.\d+|)|Android.+Chrom(ium|e)\/(12[7-9]|1[3-9]\d|[2-9]\d{2}|\d{4,})\.\d+(\.\d+|)|SamsungBrowser\/([2-9]\d|\d{3,})\.\d+/,legacy:/Edge?\/(1[6-9]|[2-9]\d|\d{3,})\.\d+(\.\d+|)|Firefox\/(5[4-9]|[6-9]\d|\d{3,})\.\d+(\.\d+|)|Chrom(ium|e)\/(5[1-9]|[6-9]\d|\d{3,})\.\d+(\.\d+|)([\d.]+$|.*Safari\/(?![\d.]+ Edge\/[\d.]+$))|(Maci|X1{2}).+ Version\/(10\.\d+|(1[1-9]|[2-9]\d|\d{3,})\.\d+)([,.]\d+|)( \(\w+\)|)( Mobile\/\w+|) Safari\/|Chrome.+OPR\/(3[89]|[4-9]\d|\d{3,})\.\d+\.\d+|(CPU[ +]OS|iPhone[ +]OS|CPU[ +]iPhone|CPU IPhone OS|CPU iPad OS)[ +]+(10[._]\d+|(1[1-9]|[2-9]\d|\d{3,})[._]\d+)([._]\d+|)|Android:?[ /-](12[7-9]|1[3-9]\d|[2-9]\d{2}|\d{4,})(\.\d+|)(\.\d+|)|Mobile Safari.+OPR\/([89]\d|\d{3,})\.\d+\.\d+|Android.+Firefox\/(12[7-9]|1[3-9]\d|[2-9]\d{2}|\d{4,})\.\d+(\.\d+|)|Android.+Chrom(ium|e)\/(12[7-9]|1[3-9]\d|[2-9]\d{2}|\d{4,})\.\d+(\.\d+|)|Android.+(UC? ?Browser|UCWEB|U3)[ /]?(15\.([5-9]|\d{2,})|(1[6-9]|[2-9]\d|\d{3,})\.\d+)\.\d+|SamsungBrowser\/(5\.\d+|([6-9]|\d{2,})\.\d+)|Android.+MQ{2}Browser\/(14(\.(9|\d{2,})|)|(1[5-9]|[2-9]\d|\d{3,})(\.\d+|))(\.\d+|)|K[Aa][Ii]OS\/(3\.\d+|([4-9]|\d{2,})\.\d+)(\.\d+|)/}).modern,t=o.legacy,s=navigator.userAgent,i.test(s)?"modern":(t.test(s),"legacy"));window.Shopify=window.Shopify||{};var c=window.Shopify;c.analytics=c.analytics||{};var u=c.analytics;u.replayQueue=[],u.publish=function(d,e,r){return u.replayQueue.push([d,e,r]),!0};try{self.performance.mark("wpm:start")}catch(d){}var h=[r,"/wpm","/b",n,l.substring(0,1),".js"].join("");!function(d){var e=d.src,r=d.async,a=void 0===r||r,n=d.onload,o=d.onerror,i=document.createElement("script"),t=document.head,s=document.body;i.async=a,i.src=e,n&&i.addEventListener("load",n),o&&i.addEventListener("error",o),t?t.appendChild(i):s?s.appendChild(i):console.error("Did not find a head or body element to append the script")}({src:h,async:!0,onload:function(){var r=window.webPixelsManager.init(d);e(r);var a=window.Shopify.analytics;a.replayQueue.forEach((function(d){var e=d[0],a=d[1],n=d[2];r.publishCustomEvent(e,a,n)})),a.replayQueue=[],a.publish=r.publishCustomEvent,a.visitor=r.visitor},onerror:function(){var e=d.storefrontBaseUrl.replace(/\/$/,""),r="".concat(e,"/.well-known/shopify/monorail/unstable/produce_batch"),n=JSON.stringify({metadata:{event_sent_at_ms:(new Date).getTime()},events:[{schema_id:"web_pixels_manager_load/3.1",payload:{version:a||"latest",bundle_target:l,page_url:self.location.href,status:"failed",surface:d.surface,error_msg:"".concat(h," has failed to load")},metadata:{event_created_at_ms:(new Date).getTime()}}]});try{if(self.navigator.sendBeacon.bind(self.navigator)(r,n))return!0}catch(d){}var o=new XMLHttpRequest;try{return o.open("POST",r,!0),o.setRequestHeader("Content-Type","text/plain"),o.send(n),!0}catch(d){console&&console.warn&&console.warn("[Web Pixels Manager] Got an unhandled error while logging a load error.")}return!1}})})({shopId: 81871077663,storefrontBaseUrl: "https://sudathi.com",extensionsBaseUrl: "https://extensions.shopifycdn.com/cdn/shopifycloud/web-pixels-manager",surface: "storefront-renderer",enabledBetaFlags: ["5de24938","d04dc9f4","4735909c"],webPixelsConfigList: [{"id":"586678559","configuration":"{\"config\":\"{\\\"pixel_id\\\":\\\"G-ZJTL6443JR\\\",\\\"target_country\\\":\\\"IN\\\",\\\"gtag_events\\\":[{\\\"type\\\":\\\"begin_checkout\\\",\\\"action_label\\\":\\\"G-ZJTL6443JR\\\"},{\\\"type\\\":\\\"search\\\",\\\"action_label\\\":\\\"G-ZJTL6443JR\\\"},{\\\"type\\\":\\\"view_item\\\",\\\"action_label\\\":[\\\"G-ZJTL6443JR\\\",\\\"MC-GSZK7BKTM5\\\"]},{\\\"type\\\":\\\"purchase\\\",\\\"action_label\\\":[\\\"G-ZJTL6443JR\\\",\\\"MC-GSZK7BKTM5\\\"]},{\\\"type\\\":\\\"page_view\\\",\\\"action_label\\\":[\\\"G-ZJTL6443JR\\\",\\\"MC-GSZK7BKTM5\\\"]},{\\\"type\\\":\\\"add_payment_info\\\",\\\"action_label\\\":\\\"G-ZJTL6443JR\\\"},{\\\"type\\\":\\\"add_to_cart\\\",\\\"action_label\\\":\\\"G-ZJTL6443JR\\\"}],\\\"enable_monitoring_mode\\\":true}\"}","eventPayloadVersion":"v1","runtimeContext":"OPEN","scriptVersion":"847fd40ec667ec888d75f73af59070ff","type":"APP","apiClientId":1780363,"privacyPurposes":[]},{"id":"394428703","configuration":"{\"pixel_id\":\"995562551658527\",\"pixel_type\":\"facebook_pixel\",\"metaapp_system_user_token\":\"-\"}","eventPayloadVersion":"v1","runtimeContext":"OPEN","scriptVersion":"8b3843af2d71780cfb83fdde884ce168","type":"APP","apiClientId":2329312,"privacyPurposes":["ANALYTICS","MARKETING","SALE_OF_DATA"]},{"id":"66683167","eventPayloadVersion":"1","runtimeContext":"LAX","scriptVersion":"1","type":"CUSTOM","privacyPurposes":["ANALYTICS","MARKETING","SALE_OF_DATA"],"name":"Wishlink"},{"id":"101155103","eventPayloadVersion":"1","runtimeContext":"LAX","scriptVersion":"1","type":"CUSTOM","privacyPurposes":["ANALYTICS","MARKETING","SALE_OF_DATA"],"name":"Lively"},{"id":"105513247","eventPayloadVersion":"1","runtimeContext":"LAX","scriptVersion":"1","type":"CUSTOM","privacyPurposes":["SALE_OF_DATA"],"name":"CreatorTag"},{"id":"108626207","eventPayloadVersion":"1","runtimeContext":"LAX","scriptVersion":"1","type":"CUSTOM","privacyPurposes":["ANALYTICS","MARKETING","SALE_OF_DATA"],"name":"Google Ads conversion Purchase"},{"id":"shopify-app-pixel","configuration":"{}","eventPayloadVersion":"v1","runtimeContext":"STRICT","scriptVersion":"0210","apiClientId":"shopify-pixel","type":"APP","privacyPurposes":["ANALYTICS","MARKETING"]},{"id":"shopify-custom-pixel","eventPayloadVersion":"v1","runtimeContext":"LAX","scriptVersion":"0210","apiClientId":"shopify-pixel","type":"CUSTOM","privacyPurposes":["ANALYTICS","MARKETING"]}],initData: {"shop":{"name":"Sudathi","paymentSettings":{"currencyCode":"INR"},"myshopifyDomain":"leemboodi-new.myshopify.com","countryCode":"IN","storefrontUrl":"https:\/\/sudathi.com"},"customer":null,"cart":null,"checkout":null,"productVariants":[],"purchasingCompany":null},},function pageEvents(webPixelsManagerAPI) {webPixelsManagerAPI.publish("page_viewed", {});webPixelsManagerAPI.publish("collection_viewed", {"collection":{"id":"465801314591","title":"Premium Sarees","productVariants":[{"price":{"amount":1799.0,"currencyCode":"INR"},"product":{"title":"Red Plain Woven Saree","vendor":"Sudathi","id":"8690290295071","untranslatedTitle":"Red Plain Woven Saree","url":"\/products\/red-woven-saree-2992s2671","type":"Sarees"},"id":"46869760016671","image":{"src":"\/\/sudathi.com\/cdn\/shop\/files\/2992S2671_6.jpg?v=1716273701"},"sku":"2992S2671","title":"Default Title","untranslatedTitle":"Default Title"},{"price":{"amount":1119.0,"currencyCode":"INR"},"product":{"title":"Beige Silk Woven Banarasi Saree","vendor":"Sudathi","id":"9419986501919","untranslatedTitle":"Beige Silk Woven Banarasi Saree","url":"\/products\/beige-silk-woven-banarasi-saree-3871s186","type":"Sarees"},"id":"49170294374687","image":{"src":"\/\/sudathi.com\/cdn\/shop\/files\/3871S186_1.jpg?v=1724413938"},"sku":"3871S186","title":"Default Title","untranslatedTitle":"Default Title"},{"price":{"amount":1299.0,"currencyCode":"INR"},"product":{"title":"Olive Green Leheriya Printed Georgette Saree","vendor":"Sudathi","id":"8688814784799","untranslatedTitle":"Olive Green Leheriya Printed Georgette Saree","url":"\/products\/olive-green-georgette-saree","type":"Sarees"},"id":"46865798103327","image":{"src":"\/\/sudathi.com\/cdn\/shop\/files\/2555S283_15.jpg?v=1716273337"},"sku":"2555S283","title":"Default Title","untranslatedTitle":"Default Title"},{"price":{"amount":1409.0,"currencyCode":"INR"},"product":{"title":"Sky Blue Woven Banarasi Organza Saree","vendor":"Sudathi","id":"8690325225759","untranslatedTitle":"Sky Blue Woven Banarasi Organza Saree","url":"\/products\/sky-blue-woven-banarasi-organza-saree-3086s141","type":"Sarees"},"id":"46869904228639","image":{"src":"\/\/sudathi.com\/cdn\/shop\/files\/3086S141_1.jpg?v=1695817198"},"sku":"3086S141","title":"Default Title","untranslatedTitle":"Default Title"},{"price":{"amount":1229.0,"currencyCode":"INR"},"product":{"title":"Lime Yellow Silk Woven Banarasi Saree","vendor":"Sudathi","id":"9371508441375","untranslatedTitle":"Lime Yellow Silk Woven Banarasi Saree","url":"\/products\/lime-yellow-silk-woven-banarasi-saree-3786s6090","type":"Saree"},"id":"48963847127327","image":{"src":"\/\/sudathi.com\/cdn\/shop\/files\/3786S6090_1.jpg?v=1721462778"},"sku":"3786S6090","title":"Default Title","untranslatedTitle":"Default Title"},{"price":{"amount":1199.0,"currencyCode":"INR"},"product":{"title":"Green Floral Silk Woven Saree","vendor":"Sudathi","id":"9224340406559","untranslatedTitle":"Green Floral Silk Woven Saree","url":"\/products\/green-silk-plain-saree-3693s143","type":"Sarees"},"id":"48626760089887","image":{"src":"\/\/sudathi.com\/cdn\/shop\/files\/3693S143_1.jpg?v=1715940774"},"sku":"3693S143","title":"Default Title","untranslatedTitle":"Default Title"},{"price":{"amount":1309.0,"currencyCode":"INR"},"product":{"title":"Pastel Yellow Net Embroidery Embroidery Saree","vendor":"Sudathi","id":"9430041035039","untranslatedTitle":"Pastel Yellow Net Embroidery Embroidery Saree","url":"\/products\/pastel-yellow-net-embroidery-embroidery-saree-3913s495","type":"Sarees"},"id":"49205968797983","image":{"src":"\/\/sudathi.com\/cdn\/shop\/files\/3913S495_1.jpg?v=1725103892"},"sku":"3913S495","title":"Default Title","untranslatedTitle":"Default Title"},{"price":{"amount":1199.0,"currencyCode":"INR"},"product":{"title":"Rani Pink Jacquard Silk Saree","vendor":"Sudathi","id":"8871374422303","untranslatedTitle":"Rani Pink Jacquard Silk Saree","url":"\/products\/rani-pink-jacquard-silk-saree-3399s277","type":"Sarees"},"id":"47440681730335","image":{"src":"\/\/sudathi.com\/cdn\/shop\/files\/3399S277_1.jpg?v=1704448379"},"sku":"3399S277","title":"Default Title","untranslatedTitle":"Default Title"},{"price":{"amount":1069.0,"currencyCode":"INR"},"product":{"title":"Lavender Silk Plain Saree","vendor":"Sudathi","id":"8973012828447","untranslatedTitle":"Lavender Silk Plain Saree","url":"\/products\/lavender-silk-plain-saree-3584s361","type":"Sarees"},"id":"47831366959391","image":{"src":"\/\/sudathi.com\/cdn\/shop\/files\/3584S361_3.jpg?v=1709815488"},"sku":"3584S361","title":"Default Title","untranslatedTitle":"Default Title"},{"price":{"amount":2069.0,"currencyCode":"INR"},"product":{"title":"Cream Georgette Woven Banarasi Saree","vendor":"Sudathi","id":"9403743535391","untranslatedTitle":"Cream Georgette Woven Banarasi Saree","url":"\/products\/cream-georgette-woven-banarasi-saree-3811s6103","type":"Sarees"},"id":"49108041629983","image":{"src":"\/\/sudathi.com\/cdn\/shop\/files\/3811S6103_1.jpg?v=1723212330"},"sku":"3811S6103","title":"Default Title","untranslatedTitle":"Default Title"},{"price":{"amount":1799.0,"currencyCode":"INR"},"product":{"title":"Pink Silk Saree","vendor":"Sudathi","id":"8690078875935","untranslatedTitle":"Pink Silk Saree","url":"\/products\/pink-silk-saree-11","type":"Sarees"},"id":"46868814627103","image":{"src":"\/\/sudathi.com\/cdn\/shop\/files\/2786s101-a.jpg?v=1695809883"},"sku":"2786S101","title":"Default Title","untranslatedTitle":"Default Title"},{"price":{"amount":1269.0,"currencyCode":"INR"},"product":{"title":"Yellow  Printed Silk Saree","vendor":"Sudathi","id":"8842580951327","untranslatedTitle":"Yellow  Printed Silk Saree","url":"\/products\/yellow-cream-printed-silk-saree-3311s422","type":"Sarees"},"id":"47342014693663","image":{"src":"\/\/sudathi.com\/cdn\/shop\/files\/05-09-2023_Prashant_10782ck.jpg?v=1703500662"},"sku":"3311S422","title":"Default Title","untranslatedTitle":"Default Title"},{"price":{"amount":1049.0,"currencyCode":"INR"},"product":{"title":"Khakhi Silk Woven Banarasi Saree","vendor":"Sudathi","id":"9419986272543","untranslatedTitle":"Khakhi Silk Woven Banarasi Saree","url":"\/products\/khakhi-silk-woven-banarasi-saree-3871s182","type":"Sarees"},"id":"49170294145311","image":{"src":"\/\/sudathi.com\/cdn\/shop\/files\/3871S182_1.jpg?v=1724413974"},"sku":"3871S182","title":"Default Title","untranslatedTitle":"Default Title"},{"price":{"amount":2289.0,"currencyCode":"INR"},"product":{"title":"Dark Green Georgette Woven Banarasi Saree","vendor":"Sudathi","id":"9430039626015","untranslatedTitle":"Dark Green Georgette Woven Banarasi Saree","url":"\/products\/dark-green-georgette-woven-banarasi-saree-3906s153","type":"Sarees"},"id":"49205967290655","image":{"src":"\/\/sudathi.com\/cdn\/shop\/files\/3906S153_1.jpg?v=1725104675"},"sku":"3906S153","title":"Default Title","untranslatedTitle":"Default Title"},{"price":{"amount":1129.0,"currencyCode":"INR"},"product":{"title":"Light Green Silk Embroidery Embroidery Saree","vendor":"Sudathi","id":"9430041264415","untranslatedTitle":"Light Green Silk Embroidery Embroidery Saree","url":"\/products\/light-green-silk-embroidery-embroidery-saree-3914s505","type":"Sarees"},"id":"49205969027359","image":{"src":"\/\/sudathi.com\/cdn\/shop\/files\/3914S505_1.jpg?v=1725103832"},"sku":"3914S505","title":"Default Title","untranslatedTitle":"Default Title"},{"price":{"amount":1779.0,"currencyCode":"INR"},"product":{"title":"White Cotton Woven Banarasi Saree","vendor":"Sudathi","id":"9421001556255","untranslatedTitle":"White Cotton Woven Banarasi Saree","url":"\/products\/white-cotton-woven-banarasi-saree-3879s101","type":"Sarees"},"id":"49173134311711","image":{"src":"\/\/sudathi.com\/cdn\/shop\/files\/3879S101_1.jpg?v=1724483949"},"sku":"3879S101","title":"Default Title","untranslatedTitle":"Default Title"},{"price":{"amount":2499.0,"currencyCode":"INR"},"product":{"title":"Wine Satin Woven Banarasi Saree","vendor":"Sudathi","id":"9381017846047","untranslatedTitle":"Wine Satin Woven Banarasi Saree","url":"\/products\/wine-satin-woven-banarasi-saree-3818s6154","type":"Sarees"},"id":"48994913550623","image":{"src":"\/\/sudathi.com\/cdn\/shop\/files\/3818S6154_1.jpg?v=1721907348"},"sku":"3818S6154","title":"Default Title","untranslatedTitle":"Default Title"},{"price":{"amount":2289.0,"currencyCode":"INR"},"product":{"title":"Red Georgette Woven Banarasi Saree","vendor":"Sudathi","id":"9430039593247","untranslatedTitle":"Red Georgette Woven Banarasi Saree","url":"\/products\/red-georgette-woven-banarasi-saree-3906s152","type":"Sarees"},"id":"49205967257887","image":{"src":"\/\/sudathi.com\/cdn\/shop\/files\/3906S152_1.jpg?v=1725104683"},"sku":"3906S152","title":"Default Title","untranslatedTitle":"Default Title"},{"price":{"amount":1199.0,"currencyCode":"INR"},"product":{"title":"Mauve Banarasi Silk Woven Saree","vendor":"Sudathi","id":"9291001495839","untranslatedTitle":"Mauve Banarasi Silk Woven Saree","url":"\/products\/mauve-silk-woven-saree-3756s166","type":"Sarees"},"id":"48763434303775","image":{"src":"\/\/sudathi.com\/cdn\/shop\/files\/3756S166_1.jpg?v=1717580234"},"sku":"3756S166","title":"Default Title","untranslatedTitle":"Default Title"},{"price":{"amount":3519.0,"currencyCode":"INR"},"product":{"title":"Gold \u0026 Wien Silk Weaving Saree","vendor":"Sudathi","id":"8973010600223","untranslatedTitle":"Gold \u0026 Wien Silk Weaving Saree","url":"\/products\/gold-silk-weaving-saree-3570s1384","type":"Sarees"},"id":"47831354376479","image":{"src":"\/\/sudathi.com\/cdn\/shop\/files\/3570S1384_1.jpg?v=1709817579"},"sku":"3570S1384","title":"Default Title","untranslatedTitle":"Default Title"},{"price":{"amount":1719.0,"currencyCode":"INR"},"product":{"title":"Red Silk Sequence Banarasi Saree","vendor":"Sudathi","id":"9430037856543","untranslatedTitle":"Red Silk Sequence Banarasi Saree","url":"\/products\/red-silk-sequence-banarasi-saree-3898s323","type":"Sarees"},"id":"49205965324575","image":{"src":"\/\/sudathi.com\/cdn\/shop\/files\/3898S323_1.jpg?v=1725105711"},"sku":"3898S323","title":"Default Title","untranslatedTitle":"Default Title"},{"price":{"amount":1399.0,"currencyCode":"INR"},"product":{"title":"Ready To Wear Violet Silk Printed Saree","vendor":"Sudathi","id":"9357614678303","untranslatedTitle":"Ready To Wear Violet Silk Printed Saree","url":"\/products\/ready-to-wear-violet-silk-printed-saree-18rs159","type":"Sarees"},"id":"48922065338655","image":{"src":"\/\/sudathi.com\/cdn\/shop\/files\/18RS159_2.jpg?v=1720616335"},"sku":"18RS159","title":"Default Title","untranslatedTitle":"Default Title"},{"price":{"amount":2199.0,"currencyCode":"INR"},"product":{"title":"Rama Green Paithani Silk Saree","vendor":"Sudathi","id":"8935538950431","untranslatedTitle":"Rama Green Paithani Silk Saree","url":"\/products\/rama-green-silk-woven-sarees-3522s1124","type":"Sarees"},"id":"47695279096095","image":{"src":"\/\/sudathi.com\/cdn\/shop\/files\/3522S1124_1.jpg?v=1708601405"},"sku":"3522S1124","title":"Default Title","untranslatedTitle":"Default Title"},{"price":{"amount":1489.0,"currencyCode":"INR"},"product":{"title":"Dusty Green Silk Stone Work Swarovski Saree","vendor":"Sudathi","id":"9430038479135","untranslatedTitle":"Dusty Green Silk Stone Work Swarovski Saree","url":"\/products\/dusty-green-silk-stone-work-swarovski-saree-3901s453","type":"Sarees"},"id":"49205965947167","image":{"src":"\/\/sudathi.com\/cdn\/shop\/files\/3901S453_1.jpg?v=1725105371"},"sku":"3901S453","title":"Default Title","untranslatedTitle":"Default Title"},{"price":{"amount":1409.0,"currencyCode":"INR"},"product":{"title":"Pista Green Woven Banarasi Organza Saree","vendor":"Sudathi","id":"8690325586207","untranslatedTitle":"Pista Green Woven Banarasi Organza Saree","url":"\/products\/pista-green-woven-banarasi-organza-saree-3086s145","type":"Sarees"},"id":"46869905146143","image":{"src":"\/\/sudathi.com\/cdn\/shop\/files\/3086S145_1.jpg?v=1695817209"},"sku":"3086S145","title":"Default Title","untranslatedTitle":"Default Title"},{"price":{"amount":1049.0,"currencyCode":"INR"},"product":{"title":"Yellow Georgette Plain Saree","vendor":"Sudathi","id":"9403745206559","untranslatedTitle":"Yellow Georgette Plain Saree","url":"\/products\/yellow-georgette-plain-saree-3838s6212","type":"Sarees"},"id":"49108046807327","image":{"src":"\/\/sudathi.com\/cdn\/shop\/files\/3838S6212_1.jpg?v=1723211549"},"sku":"3838S6212","title":"Default Title","untranslatedTitle":"Default Title"},{"price":{"amount":1179.0,"currencyCode":"INR"},"product":{"title":"Red Georgette Stone Work Swarovski Saree","vendor":"Sudathi","id":"9430038839583","untranslatedTitle":"Red Georgette Stone Work Swarovski Saree","url":"\/products\/red-georgette-stone-work-swarovski-saree-3902s464","type":"Sarees"},"id":"49205966504223","image":{"src":"\/\/sudathi.com\/cdn\/shop\/files\/3902S464_1.jpg?v=1725105306"},"sku":"3902S464","title":"Default Title","untranslatedTitle":"Default Title"},{"price":{"amount":1199.0,"currencyCode":"INR"},"product":{"title":"Pink Banarasi Silk Woven Saree","vendor":"Sudathi","id":"9291001397535","untranslatedTitle":"Pink Banarasi Silk Woven Saree","url":"\/products\/pink-silk-woven-saree-3756s164","type":"Sarees"},"id":"48763434205471","image":{"src":"\/\/sudathi.com\/cdn\/shop\/files\/3756S164_1_305b3d07-80d4-483d-a385-67c9b7e957d7.jpg?v=1719051970"},"sku":"3756S164","title":"Default Title","untranslatedTitle":"Default Title"}]}});},"https://sudathi.com/cdn","fb1ffa160d2bd633e9a569ca53327bdc14774168","f69b9fb6w3396cff1pe45e79a7m2cbe3366",);</script><script async="" src="js/bf69b9fb6w3396cff1pe45e79a7m2cbe3366m.js"></script>  <script>window.ShopifyAnalytics = window.ShopifyAnalytics || {};
+  window.ShopifyAnalytics.meta = window.ShopifyAnalytics.meta || {};
+  window.ShopifyAnalytics.meta.currency = 'INR';
+  var meta = {"products":[{"id":8690290295071,"gid":"gid:\/\/shopify\/Product\/8690290295071","vendor":"Sudathi","type":"Sarees","variants":[{"id":46869760016671,"price":179900,"name":"Red Plain Woven Saree","public_title":null,"sku":"2992S2671"}]},{"id":9419986501919,"gid":"gid:\/\/shopify\/Product\/9419986501919","vendor":"Sudathi","type":"Sarees","variants":[{"id":49170294374687,"price":111900,"name":"Beige Silk Woven Banarasi Saree","public_title":null,"sku":"3871S186"}]},{"id":8688814784799,"gid":"gid:\/\/shopify\/Product\/8688814784799","vendor":"Sudathi","type":"Sarees","variants":[{"id":46865798103327,"price":129900,"name":"Olive Green Leheriya Printed Georgette Saree","public_title":null,"sku":"2555S283"}]},{"id":8690325225759,"gid":"gid:\/\/shopify\/Product\/8690325225759","vendor":"Sudathi","type":"Sarees","variants":[{"id":46869904228639,"price":140900,"name":"Sky Blue Woven Banarasi Organza Saree","public_title":null,"sku":"3086S141"}]},{"id":9371508441375,"gid":"gid:\/\/shopify\/Product\/9371508441375","vendor":"Sudathi","type":"Saree","variants":[{"id":48963847127327,"price":122900,"name":"Lime Yellow Silk Woven Banarasi Saree","public_title":null,"sku":"3786S6090"}]},{"id":9224340406559,"gid":"gid:\/\/shopify\/Product\/9224340406559","vendor":"Sudathi","type":"Sarees","variants":[{"id":48626760089887,"price":119900,"name":"Green Floral Silk Woven Saree","public_title":null,"sku":"3693S143"}]},{"id":9430041035039,"gid":"gid:\/\/shopify\/Product\/9430041035039","vendor":"Sudathi","type":"Sarees","variants":[{"id":49205968797983,"price":130900,"name":"Pastel Yellow Net Embroidery Embroidery Saree","public_title":null,"sku":"3913S495"}]},{"id":8871374422303,"gid":"gid:\/\/shopify\/Product\/8871374422303","vendor":"Sudathi","type":"Sarees","variants":[{"id":47440681730335,"price":119900,"name":"Rani Pink Jacquard Silk Saree","public_title":null,"sku":"3399S277"}]},{"id":8973012828447,"gid":"gid:\/\/shopify\/Product\/8973012828447","vendor":"Sudathi","type":"Sarees","variants":[{"id":47831366959391,"price":106900,"name":"Lavender Silk Plain Saree","public_title":null,"sku":"3584S361"}]},{"id":9403743535391,"gid":"gid:\/\/shopify\/Product\/9403743535391","vendor":"Sudathi","type":"Sarees","variants":[{"id":49108041629983,"price":206900,"name":"Cream Georgette Woven Banarasi Saree","public_title":null,"sku":"3811S6103"}]},{"id":8690078875935,"gid":"gid:\/\/shopify\/Product\/8690078875935","vendor":"Sudathi","type":"Sarees","variants":[{"id":46868814627103,"price":179900,"name":"Pink Silk Saree","public_title":null,"sku":"2786S101"}]},{"id":8842580951327,"gid":"gid:\/\/shopify\/Product\/8842580951327","vendor":"Sudathi","type":"Sarees","variants":[{"id":47342014693663,"price":126900,"name":"Yellow  Printed Silk Saree","public_title":null,"sku":"3311S422"}]},{"id":9419986272543,"gid":"gid:\/\/shopify\/Product\/9419986272543","vendor":"Sudathi","type":"Sarees","variants":[{"id":49170294145311,"price":104900,"name":"Khakhi Silk Woven Banarasi Saree","public_title":null,"sku":"3871S182"}]},{"id":9430039626015,"gid":"gid:\/\/shopify\/Product\/9430039626015","vendor":"Sudathi","type":"Sarees","variants":[{"id":49205967290655,"price":228900,"name":"Dark Green Georgette Woven Banarasi Saree","public_title":null,"sku":"3906S153"}]},{"id":9430041264415,"gid":"gid:\/\/shopify\/Product\/9430041264415","vendor":"Sudathi","type":"Sarees","variants":[{"id":49205969027359,"price":112900,"name":"Light Green Silk Embroidery Embroidery Saree","public_title":null,"sku":"3914S505"}]},{"id":9421001556255,"gid":"gid:\/\/shopify\/Product\/9421001556255","vendor":"Sudathi","type":"Sarees","variants":[{"id":49173134311711,"price":177900,"name":"White Cotton Woven Banarasi Saree","public_title":null,"sku":"3879S101"}]},{"id":9381017846047,"gid":"gid:\/\/shopify\/Product\/9381017846047","vendor":"Sudathi","type":"Sarees","variants":[{"id":48994913550623,"price":249900,"name":"Wine Satin Woven Banarasi Saree","public_title":null,"sku":"3818S6154"}]},{"id":9430039593247,"gid":"gid:\/\/shopify\/Product\/9430039593247","vendor":"Sudathi","type":"Sarees","variants":[{"id":49205967257887,"price":228900,"name":"Red Georgette Woven Banarasi Saree","public_title":null,"sku":"3906S152"}]},{"id":9291001495839,"gid":"gid:\/\/shopify\/Product\/9291001495839","vendor":"Sudathi","type":"Sarees","variants":[{"id":48763434303775,"price":119900,"name":"Mauve Banarasi Silk Woven Saree","public_title":null,"sku":"3756S166"}]},{"id":8973010600223,"gid":"gid:\/\/shopify\/Product\/8973010600223","vendor":"Sudathi","type":"Sarees","variants":[{"id":47831354376479,"price":351900,"name":"Gold \u0026 Wien Silk Weaving Saree","public_title":null,"sku":"3570S1384"}]},{"id":9430037856543,"gid":"gid:\/\/shopify\/Product\/9430037856543","vendor":"Sudathi","type":"Sarees","variants":[{"id":49205965324575,"price":171900,"name":"Red Silk Sequence Banarasi Saree","public_title":null,"sku":"3898S323"}]},{"id":9357614678303,"gid":"gid:\/\/shopify\/Product\/9357614678303","vendor":"Sudathi","type":"Sarees","variants":[{"id":48922065338655,"price":139900,"name":"Ready To Wear Violet Silk Printed Saree","public_title":null,"sku":"18RS159"}]},{"id":8935538950431,"gid":"gid:\/\/shopify\/Product\/8935538950431","vendor":"Sudathi","type":"Sarees","variants":[{"id":47695279096095,"price":219900,"name":"Rama Green Paithani Silk Saree","public_title":null,"sku":"3522S1124"}]},{"id":9430038479135,"gid":"gid:\/\/shopify\/Product\/9430038479135","vendor":"Sudathi","type":"Sarees","variants":[{"id":49205965947167,"price":148900,"name":"Dusty Green Silk Stone Work Swarovski Saree","public_title":null,"sku":"3901S453"}]},{"id":8690325586207,"gid":"gid:\/\/shopify\/Product\/8690325586207","vendor":"Sudathi","type":"Sarees","variants":[{"id":46869905146143,"price":140900,"name":"Pista Green Woven Banarasi Organza Saree","public_title":null,"sku":"3086S145"}]},{"id":9403745206559,"gid":"gid:\/\/shopify\/Product\/9403745206559","vendor":"Sudathi","type":"Sarees","variants":[{"id":49108046807327,"price":104900,"name":"Yellow Georgette Plain Saree","public_title":null,"sku":"3838S6212"}]},{"id":9430038839583,"gid":"gid:\/\/shopify\/Product\/9430038839583","vendor":"Sudathi","type":"Sarees","variants":[{"id":49205966504223,"price":117900,"name":"Red Georgette Stone Work Swarovski Saree","public_title":null,"sku":"3902S464"}]},{"id":9291001397535,"gid":"gid:\/\/shopify\/Product\/9291001397535","vendor":"Sudathi","type":"Sarees","variants":[{"id":48763434205471,"price":119900,"name":"Pink Banarasi Silk Woven Saree","public_title":null,"sku":"3756S164"}]}],"page":{"pageType":"collection","resourceType":"collection","resourceId":465801314591}};
+  for (var attr in meta) {
+    window.ShopifyAnalytics.meta[attr] = meta[attr];
+  }</script>
+  <script>window.ShopifyAnalytics.merchantGoogleAnalytics = function() {
+    
+  };
+  </script>
+  <script class="analytics">(function () {
+      var customDocumentWrite = function(content) {
+        var jquery = null;
+  
+        if (window.jQuery) {
+          jquery = window.jQuery;
+        } else if (window.Checkout && window.Checkout.$) {
+          jquery = window.Checkout.$;
+        }
+  
+        if (jquery) {
+          jquery('body').append(content);
+        }
+      };
+  
+      var hasLoggedConversion = function(token) {
+        if (token) {
+          return document.cookie.indexOf('loggedConversion=' + token) !== -1;
+        }
+        return false;
+      }
+  
+      var setCookieIfConversion = function(token) {
+        if (token) {
+          var twoMonthsFromNow = new Date(Date.now());
+          twoMonthsFromNow.setMonth(twoMonthsFromNow.getMonth() + 2);
+  
+          document.cookie = 'loggedConversion=' + token + '; expires=' + twoMonthsFromNow;
+        }
+      }
+  
+      var trekkie = window.ShopifyAnalytics.lib = window.trekkie = window.trekkie || [];
+      if (trekkie.integrations) {
+        return;
+      }
+      trekkie.methods = [
+        'identify',
+        'page',
+        'ready',
+        'track',
+        'trackForm',
+        'trackLink'
+      ];
+      trekkie.factory = function(method) {
+        return function() {
+          var args = Array.prototype.slice.call(arguments);
+          args.unshift(method);
+          trekkie.push(args);
+          return trekkie;
+        };
+      };
+      for (var i = 0; i < trekkie.methods.length; i++) {
+        var key = trekkie.methods[i];
+        trekkie[key] = trekkie.factory(key);
+      }
+      trekkie.load = function(config) {
+        trekkie.config = config || {};
+        trekkie.config.initialDocumentCookie = document.cookie;
+        var first = document.getElementsByTagName('script')[0];
+        var script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.onerror = function(e) {
+          var scriptFallback = document.createElement('script');
+          scriptFallback.type = 'text/javascript';
+          scriptFallback.onerror = function(error) {
+                  var Monorail = {
+        produce: function produce(monorailDomain, schemaId, payload) {
+          var currentMs = new Date().getTime();
+          var event = {
+            schema_id: schemaId,
+            payload: payload,
+            metadata: {
+              event_created_at_ms: currentMs,
+              event_sent_at_ms: currentMs
+            }
+          };
+          return Monorail.sendRequest("https://" + monorailDomain + "/v1/produce", JSON.stringify(event));
+        },
+        sendRequest: function sendRequest(endpointUrl, payload) {
+          // Try the sendBeacon API
+          if (window && window.navigator && typeof window.navigator.sendBeacon === 'function' && typeof window.Blob === 'function' && !Monorail.isIos12()) {
+            var blobData = new window.Blob([payload], {
+              type: 'text/plain'
+            });
+  
+            if (window.navigator.sendBeacon(endpointUrl, blobData)) {
+              return true;
+            } // sendBeacon was not successful
+  
+          } // XHR beacon
+  
+          var xhr = new XMLHttpRequest();
+  
+          try {
+            xhr.open('POST', endpointUrl);
+            xhr.setRequestHeader('Content-Type', 'text/plain');
+            xhr.send(payload);
+          } catch (e) {
+            console.log(e);
+          }
+  
+          return false;
+        },
+        isIos12: function isIos12() {
+          return window.navigator.userAgent.lastIndexOf('iPhone; CPU iPhone OS 12_') !== -1 || window.navigator.userAgent.lastIndexOf('iPad; CPU OS 12_') !== -1;
+        }
+      };
+      Monorail.produce('monorail-edge.shopifysvc.com',
+        'trekkie_storefront_load_errors/1.1',
+        {shop_id: 81871077663,
+        theme_id: 163093348639,
+        app_name: "storefront",
+        context_url: window.location.href,
+        source_url: "//sudathi.com/cdn/s/trekkie.storefront.191ee957437379e11b4b5a983ae36024546a469d.min.js"});
+  
+          };
+          scriptFallback.async = true;
+          scriptFallback.src = '//sudathi.com/cdn/s/trekkie.storefront.191ee957437379e11b4b5a983ae36024546a469d.min.js';
+          first.parentNode.insertBefore(scriptFallback, first);
+        };
+        script.async = true;
+        script.src = '//sudathi.com/cdn/s/trekkie.storefront.191ee957437379e11b4b5a983ae36024546a469d.min.js';
+        first.parentNode.insertBefore(script, first);
+      };
+      trekkie.load(
+        {"Trekkie":{"appName":"storefront","development":false,"defaultAttributes":{"shopId":81871077663,"isMerchantRequest":null,"themeId":163093348639,"themeCityHash":"6408117611967719512","contentLanguage":"en","currency":"INR"},"isServerSideCookieWritingEnabled":true,"monorailRegion":"shop_domain","enabledBetaFlags":["bbcf04e6"]},"Google Gtag Pixel":{"conversionId":"G-ZJTL6443JR","eventLabels":[{"type":"begin_checkout","action_label":"G-ZJTL6443JR"},{"type":"search","action_label":"G-ZJTL6443JR"},{"type":"view_item","action_label":["G-ZJTL6443JR","MC-GSZK7BKTM5"]},{"type":"purchase","action_label":["G-ZJTL6443JR","MC-GSZK7BKTM5"]},{"type":"page_view","action_label":["G-ZJTL6443JR","MC-GSZK7BKTM5"]},{"type":"add_payment_info","action_label":"G-ZJTL6443JR"},{"type":"add_to_cart","action_label":"G-ZJTL6443JR"}],"targetCountry":"IN"},"Session Attribution":{},"S2S":{"facebookCapiEnabled":true,"source":"trekkie-storefront-renderer","apiClientId":580111}}
+      );
+  
+      var loaded = false;
+      trekkie.ready(function() {
+        if (loaded) return;
+        loaded = true;
+  
+        window.ShopifyAnalytics.lib = window.trekkie;
+  
+    
+        var originalDocumentWrite = document.write;
+        document.write = customDocumentWrite;
+        try { window.ShopifyAnalytics.merchantGoogleAnalytics.call(this); } catch(error) {};
+        document.write = originalDocumentWrite;
+  
+        window.ShopifyAnalytics.lib.page(null,{"pageType":"collection","resourceType":"collection","resourceId":465801314591});
+  
+        var match = window.location.pathname.match(/checkouts\/(.+)\/(thank_you|post_purchase)/)
+        var token = match? match[1]: undefined;
+        if (!hasLoggedConversion(token)) {
+          setCookieIfConversion(token);
+          window.ShopifyAnalytics.lib.track("Viewed Product Category",{"currency":"INR","category":"Collection: premium-sarees","collectionName":"premium-sarees","collectionId":465801314591,"nonInteraction":true});
+        }
+      });
+  
+  
+          var eventsListenerScript = document.createElement('script');
+          eventsListenerScript.async = true;
+          eventsListenerScript.src = "//sudathi.com/cdn/shopifycloud/shopify/assets/shop_events_listener-61fa9e0a912c675e178777d2b27f6cbd482f8912a6b0aa31fa3515985a8cd626.js";
+          document.getElementsByTagName('head')[0].appendChild(eventsListenerScript);
+  
+  })();</script><script async="" src="js/shop_events_listener-61fa9e0a912c675e178777d2b27f6cbd482f8912a6b0aa31fa3515985a8cd626.js"></script>
+  <script class="boomerang">
+  (function () {
+    if (window.BOOMR && (window.BOOMR.version || window.BOOMR.snippetExecuted)) {
+      return;
+    }
+    window.BOOMR = window.BOOMR || {};
+    window.BOOMR.snippetStart = new Date().getTime();
+    window.BOOMR.snippetExecuted = true;
+    window.BOOMR.snippetVersion = 12;
+    window.BOOMR.application = "storefront-renderer";
+    window.BOOMR.themeName = "Be Yours";
+    window.BOOMR.themeVersion = "6.8.0";
+    window.BOOMR.shopId = 81871077663;
+    window.BOOMR.themeId = 163093348639;
+    window.BOOMR.renderRegion = "gcp-europe-west1";
+    window.BOOMR.url =
+      "https://sudathi.com/cdn/shopifycloud/boomerang/shopify-boomerang-1.0.0.min.js";
+    var where = document.currentScript || document.getElementsByTagName("script")[0];
+    var parentNode = where.parentNode;
+    var promoted = false;
+    var LOADER_TIMEOUT = 3000;
+    function promote() {
+      if (promoted) {
+        return;
+      }
+      var script = document.createElement("script");
+      script.id = "boomr-scr-as";
+      script.src = window.BOOMR.url;
+      script.async = true;
+      parentNode.appendChild(script);
+      promoted = true;
+    }
+    function iframeLoader(wasFallback) {
+      promoted = true;
+      var dom, bootstrap, iframe, iframeStyle;
+      var doc = document;
+      var win = window;
+      window.BOOMR.snippetMethod = wasFallback ? "if" : "i";
+      bootstrap = function(parent, scriptId) {
+        var script = doc.createElement("script");
+        script.id = scriptId || "boomr-if-as";
+        script.src = window.BOOMR.url;
+        BOOMR_lstart = new Date().getTime();
+        parent = parent || doc.body;
+        parent.appendChild(script);
+      };
+      if (!window.addEventListener && window.attachEvent && navigator.userAgent.match(/MSIE [67]./)) {
+        window.BOOMR.snippetMethod = "s";
+        bootstrap(parentNode, "boomr-async");
+        return;
+      }
+      iframe = document.createElement("IFRAME");
+      iframe.src = "about:blank";
+      iframe.title = "";
+      iframe.role = "presentation";
+      iframe.loading = "eager";
+      iframeStyle = (iframe.frameElement || iframe).style;
+      iframeStyle.width = 0;
+      iframeStyle.height = 0;
+      iframeStyle.border = 0;
+      iframeStyle.display = "none";
+      parentNode.appendChild(iframe);
+      try {
+        win = iframe.contentWindow;
+        doc = win.document.open();
+      } catch (e) {
+        dom = document.domain;
+        iframe.src = "javascript:var d=document.open();d.domain='" + dom + "';void(0);";
+        win = iframe.contentWindow;
+        doc = win.document.open();
+      }
+      if (dom) {
+        doc._boomrl = function() {
+          this.domain = dom;
+          bootstrap();
+        };
+        doc.write("<body onload='document._boomrl();'>");
+      } else {
+        win._boomrl = function() {
+          bootstrap();
+        };
+        if (win.addEventListener) {
+          win.addEventListener("load", win._boomrl, false);
+        } else if (win.attachEvent) {
+          win.attachEvent("onload", win._boomrl);
+        }
+      }
+      doc.close();
+    }
+    var link = document.createElement("link");
+    if (link.relList &&
+      typeof link.relList.supports === "function" &&
+      link.relList.supports("preload") &&
+      ("as" in link)) {
+      window.BOOMR.snippetMethod = "p";
+      link.href = window.BOOMR.url;
+      link.rel = "preload";
+      link.as = "script";
+      link.addEventListener("load", promote);
+      link.addEventListener("error", function() {
+        iframeLoader(true);
+      });
+      setTimeout(function() {
+        if (!promoted) {
+          iframeLoader(true);
+        }
+      }, LOADER_TIMEOUT);
+      BOOMR_lstart = new Date().getTime();
+      parentNode.appendChild(link);
+    } else {
+      iframeLoader(false);
+    }
+    function boomerangSaveLoadTime(e) {
+      window.BOOMR_onload = (e && e.timeStamp) || new Date().getTime();
+    }
+    if (window.addEventListener) {
+      window.addEventListener("load", boomerangSaveLoadTime, false);
+    } else if (window.attachEvent) {
+      window.attachEvent("onload", boomerangSaveLoadTime);
+    }
+    if (document.addEventListener) {
+      document.addEventListener("onBoomerangLoaded", function(e) {
+        e.detail.BOOMR.init({
+          ResourceTiming: {
+            enabled: true,
+            trackedResourceTypes: ["script", "img", "css"]
+          },
+        });
+        e.detail.BOOMR.t_end = new Date().getTime();
+      });
+    } else if (document.attachEvent) {
+      document.attachEvent("onpropertychange", function(e) {
+        if (!e) e=event;
+        if (e.propertyName === "onBoomerangLoaded") {
+          e.detail.BOOMR.init({
+            ResourceTiming: {
+              enabled: true,
+              trackedResourceTypes: ["script", "img", "css"]
+            },
+          });
+          e.detail.BOOMR.t_end = new Date().getTime();
+        }
+      });
+    }
+  })();</script><link href="https://sudathi.com/cdn/shopifycloud/boomerang/shopify-boomerang-1.0.0.min.js" rel="preload" as="script">
+  <script defer="" src="js/shopify-perf-kit-1.0.0.min.js" data-application="storefront-renderer" data-shop-id="81871077663" data-render-region="gcp-europe-west1" data-page-type="collection" data-theme-instance-id="163093348639" data-monorail-region="shop_domain" data-resource-timing-sampling-rate="10"></script>
+  </head>
+  <body >
+<app-root></app-root>
+ </body></html>
